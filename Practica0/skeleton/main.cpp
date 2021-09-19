@@ -25,6 +25,7 @@ PxPvd*                  gPvd        = NULL;
 PxDefaultCpuDispatcher*	gDispatcher = NULL;
 PxScene*				gScene      = NULL;
 ContactReportCallback gContactReportCallback;
+Particle* mParticle_ = nullptr;
 
 // Initialize physics engine
 void initPhysics(bool interactive)
@@ -41,9 +42,7 @@ void initPhysics(bool interactive)
 
 	gMaterial = gPhysics->createMaterial(0.5f, 0.5f, 0.6f);
 
-	auto body = new RenderItem(CreateShape(physx::PxCapsuleGeometry(1, 0.2)), Vector4(1, 0, 1, 1));
-	Particle* mParticle_ = new Particle(Vector3(), Vector3(), Vector3(), body, 2.0f);
-
+	
 	// For Solid Rigids +++++++++++++++++++++++++++++++++++++
 	PxSceneDesc sceneDesc(gPhysics->getTolerancesScale());
 	sceneDesc.gravity = PxVec3(0.0f, -9.8f, 0.0f);
@@ -53,6 +52,8 @@ void initPhysics(bool interactive)
 	sceneDesc.simulationEventCallback = &gContactReportCallback;
 	gScene = gPhysics->createScene(sceneDesc);
 	// ------------------------------------------------------
+
+	mParticle_ = new Particle(Vector3(), Vector3(0,5, 0), Vector3(), 1.0f, 1.0f, 3, Vector4(0, 0.9, 0.7, 1));
 }
 
 
@@ -62,7 +63,7 @@ void initPhysics(bool interactive)
 void stepPhysics(bool interactive, double t)
 {
 	PX_UNUSED(interactive);
-
+	mParticle_->update(t);
 	gScene->simulate(t);
 	gScene->fetchResults(true);
 }
