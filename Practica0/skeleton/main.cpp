@@ -8,6 +8,7 @@
 #include "RenderUtils.hpp"
 #include "callbacks.hpp"
 #include "Particle.h"
+#include "Scene.h"
 
 using namespace physx;
 
@@ -25,7 +26,7 @@ PxPvd*                  gPvd        = NULL;
 PxDefaultCpuDispatcher*	gDispatcher = NULL;
 PxScene*				gScene      = NULL;
 ContactReportCallback gContactReportCallback;
-Particle* mParticle_ = nullptr;
+Scene* mScene;
 
 // Initialize physics engine
 void initPhysics(bool interactive)
@@ -42,7 +43,6 @@ void initPhysics(bool interactive)
 
 	gMaterial = gPhysics->createMaterial(0.5f, 0.5f, 0.6f);
 
-	
 	// For Solid Rigids +++++++++++++++++++++++++++++++++++++
 	PxSceneDesc sceneDesc(gPhysics->getTolerancesScale());
 	sceneDesc.gravity = PxVec3(0.0f, -9.8f, 0.0f);
@@ -51,9 +51,10 @@ void initPhysics(bool interactive)
 	sceneDesc.filterShader = contactReportFilterShader;
 	sceneDesc.simulationEventCallback = &gContactReportCallback;
 	gScene = gPhysics->createScene(sceneDesc);
+	mScene = new Scene();
 	// ------------------------------------------------------
 
-	mParticle_ = new Particle(Vector3(), Vector3(0,5, 0), Vector3(), 1.0f, 1.0f, 3, Vector4(0, 0.9, 0.7, 1));
+	
 }
 
 
@@ -63,7 +64,9 @@ void initPhysics(bool interactive)
 void stepPhysics(bool interactive, double t)
 {
 	PX_UNUSED(interactive);
-	mParticle_->update(t);
+	
+	mScene->run(t);
+
 	gScene->simulate(t);
 	gScene->fetchResults(true);
 }
@@ -97,6 +100,8 @@ void keyPress(unsigned char key, const PxTransform& camera)
 	//case ' ':	break;
 	case ' ':
 	{
+		Vector3 r = Vector3(camera.q.x, camera.q.y, camera.q.z);
+		mScene->addParticle(camera.p + Vector3(-1,0,-1), r+ Vector3(-1, 0, -1), Vector3(1, 1, 1), 1,1,0.1f, Vector4(0.2, 0.4, 0.5, 1));
 		break;
 	}
 	default:

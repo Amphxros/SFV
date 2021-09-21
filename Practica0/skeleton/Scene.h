@@ -10,35 +10,24 @@
 #include "callbacks.hpp"
 
 #include "Particle.h"
+#include <list>
 using namespace physx;
 
 class Scene
 {
 public: 
 	Scene() {};
-	~Scene() { delete mParticle_; };
+	~Scene();
 
 	void init();
-	void run();
+	void run(double t);
+
+	void addParticle(Vector3 p, Vector3 v, Vector3 a, float m, float d, float r, Vector4 c);
+
 
 
 private:
-	void initPhysics(bool interactive);
-	void cleanupPhysics(bool interactive);
-
 	
-	void stepPhysics(bool interactive, double t);
-
-
-	void onCollision(physx::PxActor* actor1, physx::PxActor* actor2);
-	void keyPress(unsigned char key, const physx::PxTransform& camera);
-
-
-
-	
-	Particle* mParticle_;
-
-
-
+	std::list<Particle*> mParticles_;
 };
 
