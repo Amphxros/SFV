@@ -17,6 +17,7 @@ void Scene::run(double t)
 {
 	for (auto p : mParticles_) {
 		p->update(t);
+	
 	}
 }
 
