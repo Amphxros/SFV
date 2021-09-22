@@ -14,19 +14,26 @@ Particle::Particle(Vector3 pos, Vector3 speed, Vector3 accel, float damp, float 
 Particle::~Particle()
 {
 	DeregisterRenderItem(mBody_);
+	delete mBody_;
+	delete mTransform_;
 	
 }
 
 void Particle::update(double t)
 {
-	//update the position
-	mPos_ += mSpeed_ * t;
-	*mTransform_ = physx::PxTransform(mPos_);
+	//si la masa es = 0 tiene acceleracion infinita y no realista
+	if (1 / mMass_ <= 0){
+		return; 
+	}
+	else {
+		//update the position
+		mPos_ += mSpeed_ * t;
+		*mTransform_ = physx::PxTransform(mPos_);
 
-	mSpeed_ += mAccel_ * t;
+		mSpeed_ += mAccel_ * t;
 
-	mSpeed_ *= powf(mDamp_, t);
-
+		mSpeed_ *= powf(mDamp_, t);
+	}
 
 }
 

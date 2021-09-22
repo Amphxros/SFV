@@ -19,9 +19,12 @@ public:
 	Scene() {};
 	~Scene();
 
+	//initialize the list
 	void init();
+	//updates all the particles and deletes if needed
 	void run(double t);
 
+	//add a particle with these parameters p= position, v= speed, a=accel, m=mass ...
 	void addParticle(Vector3 p, Vector3 v, Vector3 a, float m, float d, float r, Vector4 c);
 
 

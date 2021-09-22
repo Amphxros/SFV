@@ -18,8 +18,6 @@ void Scene::run(double t)
 	for (auto p : mParticles_) {
 		p->update(t);
 		if (p->isTimeOver(t)) {
-			std::cout << "delelewhoop" << std::endl;
-		
 			mParticles_.erase(p->getIt());
 			delete p;
 		}
@@ -29,7 +27,6 @@ void Scene::run(double t)
 
 void Scene::addParticle(Vector3 p, Vector3 v, Vector3 a, float m, float d, float r, Vector4 c)
 {
-	std::cout << "p added" << std::endl;
 	Particle* p_ = new Particle(p, v, a, d, m, r, c, 2);
 
 	auto it = mParticles_.insert(mParticles_.end(), p_);
