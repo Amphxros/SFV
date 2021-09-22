@@ -2,13 +2,15 @@
 #include <PxPhysicsAPI.h>
 #include "RenderUtils.hpp"
 #include "core.hpp"
+#include <list>
 
 class Particle
 {
 public:
-	Particle(Vector3 pos, Vector3 speed, Vector3 accel, float drag, float mass, float rd, Vector4 col);
+	Particle(Vector3 pos, Vector3 speed, Vector3 accel, float drag, float mass, float rd, Vector4 col, double limit);
 	~Particle();
 	void update(double t);
+	bool isTimeOver(double t);
 
 	inline Vector3 getPosition() { return mPos_; }
 	inline Vector3 getSpeed() { return mSpeed_; }
@@ -18,6 +20,8 @@ public:
 	inline void setSpeed(Vector3 speed) { mSpeed_ = speed; }
 	inline void setAcceleration(Vector3 accel) { mAccel_= accel; }
 
+	inline std::list<Particle*>::iterator getIt() { return mIt_; }
+	inline void setIt(std::list<Particle*>::iterator it) { mIt_ = it; }
 	
 protected:
 	//components for the physics of the particle
@@ -31,6 +35,10 @@ protected:
 	float mMass_;		//mass
 	float mDamp_;		//damping
 
+	double time_;
+	double limit_;
+
+	std::list<Particle*>::iterator mIt_;
 	
 	//components fo rendering the particle
 
