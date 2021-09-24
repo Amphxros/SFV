@@ -1,0 +1,4 @@
+﻿  Particle.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica0\skeleton\Particle.cpp(4,48): warning C5038: miembro de datos "Particle::mBody_" se inicializará después de miembro de datos "Particle::mMass_"
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica0\skeleton\Particle.cpp(9,46): warning C5038: miembro de datos "Particle::mBody_" se inicializará después de miembro de datos "Particle::mMass_"
+LINK : fatal error LNK1168: no se puede abrir ..\bin\gameDEBUG.exe para escritura
