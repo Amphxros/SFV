@@ -1,8 +1,1 @@
-﻿  Scene.cpp
-  main.cpp
-Render.obj : warning LNK4204: falta información de depuración de 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica0\bin\game.pdb' para hacer referencia al módulo; se vinculará el objeto sin tener en cuenta información de depuración
-Camera.obj : warning LNK4204: falta información de depuración de 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica0\bin\game.pdb' para hacer referencia al módulo; se vinculará el objeto sin tener en cuenta información de depuración
-RenderUtils.obj : warning LNK4204: falta información de depuración de 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica0\bin\game.pdb' para hacer referencia al módulo; se vinculará el objeto sin tener en cuenta información de depuración
-Particle.obj : warning LNK4204: falta información de depuración de 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica0\bin\game.pdb' para hacer referencia al módulo; se vinculará el objeto sin tener en cuenta información de depuración
-callbacks.obj : warning LNK4204: falta información de depuración de 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica0\bin\game.pdb' para hacer referencia al módulo; se vinculará el objeto sin tener en cuenta información de depuración
-  game.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica0\skeleton\../bin/game.exe
+﻿LINK : fatal error LNK1104: no se puede abrir el archivo '..\bin\game.exe'
