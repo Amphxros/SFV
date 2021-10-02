@@ -15,10 +15,11 @@ Scene::~Scene()
 void Scene::run(double t)
 {
 	mManager_->integrate(t);
+
 }
 
 void Scene::add()
 {
-	mManager_->addSome();
+	mManager_->addSome(100);
 }
 

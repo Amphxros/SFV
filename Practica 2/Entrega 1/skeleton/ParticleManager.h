@@ -20,7 +20,7 @@ public:
 	void add(Vector3 p , Vector3 v, Vector3 a, float d, float m, float r, Vector4 c, float time);
 	void integrate(double t);
 
-	void addSome();
+	void addSome(int n);
 	
 
 protected:

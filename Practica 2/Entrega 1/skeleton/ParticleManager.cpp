@@ -23,11 +23,11 @@ void ParticleManager::add(Vector3 p, Vector3 v, Vector3 a, float d, float m, flo
 
 void ParticleManager::integrate(double t)
 {
-	mTime_ += t;
+	mTime_ -= t;
 	if (mTime_ < 0) {
 		mTime_ = gen_time_;
 
-		add(mPoint_, Vector3(1, 1, 1), Vector3(), 1, 1, 2, Vector4(1, 1, 0.2, 0.5), 3);
+		addSome(1);
 	}
 
 	for (auto& p : mParticles_) {
@@ -41,13 +41,22 @@ void ParticleManager::integrate(double t)
 
 }
 
-void ParticleManager::addSome()
+void ParticleManager::addSome(int n)
 {
-	for (int i = 0; i < 20; i++) {
+	for (int i = 0; i < n; i++) {
 
 		float x = 1 + rand() % 9;
 		float y = 1 + rand() % 9;
 		float z = 1 + rand() % 9;
+		
+		int nan = rand() % 3;
+		if (nan == 1) {
+			y *= -1;
+		}
+		else if (nan ==0) {
+			y = 0.02f +  rand() % 3;
+		}
+
 
 		add(mPoint_ - Vector3(5, 0, 5), -Vector3(x, y, z), Vector3(), 1, 0.9, 0.2, Vector4(1, 0.1, 0.2, 1), 3);
 
