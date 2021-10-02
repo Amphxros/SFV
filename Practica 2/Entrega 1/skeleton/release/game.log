@@ -1,11 +1,15 @@
 ﻿  ParticleManager.cpp
   Scene.cpp
+  main.cpp
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
-           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen Scene.cpp)
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen Scene.cpp)
+           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen main.cpp)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen main.cpp)
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
            que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen ParticleManager.cpp)
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen ParticleManager.cpp)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
+           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen Scene.cpp)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen Scene.cpp)
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 1\skeleton\ParticleManager.cpp(4,2): warning C5038: miembro de datos "ParticleManager::mPoint_" se inicializará después de miembro de datos "ParticleManager::gen_time_"
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 1\skeleton\ParticleManager.cpp(57,24): warning C5219: conversión implícita de "int" a "float"; posible pérdida de datos
   game.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 1\bin\game.exe

@@ -3,7 +3,8 @@
 
 Scene::Scene(Vector3 p)
 {
-	mManager_ = new ParticleManager(p,0.2);
+	mManager_ = new ParticleManager(p,0.1);
+	
 }
 
 Scene::~Scene()
@@ -15,11 +16,5 @@ Scene::~Scene()
 void Scene::run(double t)
 {
 	mManager_->integrate(t);
-
-}
-
-void Scene::add()
-{
-	mManager_->addSome(100);
 }
 

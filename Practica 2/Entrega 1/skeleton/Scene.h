@@ -21,7 +21,6 @@ public:
 	~Scene();
 
 	void run(double t);
-	void add();
 
 private:	
 	ParticleManager* mManager_;

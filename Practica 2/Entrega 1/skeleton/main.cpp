@@ -97,13 +97,9 @@ void keyPress(unsigned char key, const PxTransform& camera)
 	
 	switch(toupper(key))
 	{
-	//case 'B': break;
-	//case ' ':	break;
 	case ' ':
 	{
-		mScene->add();
-		//10 * GetCamera()->getDir() - Vector3(1, 1, 1);
-		//mScene->addParticle(GetCamera()->getEye() - Vector3(5,0,5),-Vector3(1,0,1), Vector3(0,0,0), 1,0.1,2, Vector4(0.2, 0.15, 0.5, 1));
+		
 		break;
 	}
 	default:
