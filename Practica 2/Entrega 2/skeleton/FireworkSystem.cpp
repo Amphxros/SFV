@@ -1,5 +1,13 @@
 #include "FireworkSystem.h"
 
+FireworkSystem::~FireworkSystem()
+{
+	for (auto* p : mFireWorks_) {
+		delete p;
+	}
+
+}
+
 void FireworkSystem::addFirework(Firework* f)
 {
 	std::list<Particle*>::iterator it = mFireWorks_.insert(mFireWorks_.end(), f);
