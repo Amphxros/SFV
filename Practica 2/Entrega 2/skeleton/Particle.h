@@ -16,6 +16,8 @@ public:
 	inline Vector3 getSpeed() { return mSpeed_; }
 	inline Vector3 getAccel() { return mAccel_; }
 
+	
+
 	inline void setPosition(Vector3 pos) { mPos_ = pos; }
 	inline void setSpeed(Vector3 speed) { mSpeed_ = speed; }
 	inline void setAcceleration(Vector3 accel) { mAccel_= accel; }

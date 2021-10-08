@@ -14,6 +14,8 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="ParticleManager.cpp" />
     <ClCompile Include="Firework.cpp" />
+    <ClCompile Include="FireworkRules.cpp" />
+    <ClCompile Include="FireworkSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core.hpp" />
@@ -29,6 +31,8 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="ParticleManager.h" />
     <ClInclude Include="Firework.h" />
+    <ClInclude Include="FireworkRules.h" />
+    <ClInclude Include="FireworkSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">

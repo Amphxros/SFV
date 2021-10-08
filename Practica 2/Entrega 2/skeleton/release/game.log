@@ -1,19 +1,6 @@
 ﻿  Firework.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
-           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Particle.h(11,3): warning C4265: "Particle": la clase tiene funciones virtuales, pero su destructor no trivial no es virtual; puede que las instancias de esta clase no se destruyan correctamente
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.h(37,18): warning C4263: 'void Firework::integrate(float)': la función miembro no invalida ninguna función miembro virtual de clase base
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.h(47,1): warning C4264: 'void Particle::integrate(double)': no hay una invalidación disponible para la función miembro virtual desde la base 'Particle'; la función está oculta
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Particle.h(12): message : vea la declaración de 'Particle::integrate'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Particle.h(7): message : vea la declaración de 'Particle'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(4,52): warning C5038: miembro de datos "Firework::mType_" se inicializará después de miembro de datos "Firework::count"
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(34,120): warning C4100: 'damp': parámetro formal sin referencia
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(34,101): warning C4100: 'maxVelocity': parámetro formal sin referencia
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(34,80): warning C4100: 'minVelocity': parámetro formal sin referencia
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(34,64): warning C4100: 'maxAge': parámetro formal sin referencia
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(34,50): warning C4100: 'minAge': parámetro formal sin referencia
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(34,37): warning C4100: 'mType': parámetro formal sin referencia
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(38,60): warning C4100: 'parent': parámetro formal sin referencia
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(38,39): warning C4100: 'mFirework': parámetro formal sin referencia
-  game.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\bin\game.exe
+  FireworkRules.cpp
+  FireworkSystem.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\FireworkSystem.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\FireworkRules.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
