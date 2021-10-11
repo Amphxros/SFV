@@ -2,16 +2,17 @@
 #include "Firework.h"
 #include "FireworkSystem.h"
 
-mFireworkRules::mFireworkRules(Type mType, float minAge, float maxAge, Vector3 minVelocity, Vector3 maxVelocity, float damp, int count, FireworkSystem* system):
-	mType_(mType), minAge_(minAge), maxAge_(maxAge), minVelocity_(minVelocity), maxVelocity_(maxVelocity),damp_(damp), mSystem_(system)
+
+FireworkRules::FireworkRules(Type type, float minAge, float maxAge, Vector3 minVelocity, Vector3 maxVelocity, float damp, int count, FireworkSystem* system):
+	fireworkType(type), minAge_(minAge), maxAge_(maxAge), minVelocity_(minVelocity), maxVelocity_(maxVelocity),damp_(damp), mSystem_(system)
 {
 	mPayloads_ = std::vector<Payload>(count);
 }
 
-void mFireworkRules::create(Firework* mFirework, Firework* parent=nullptr)
+void FireworkRules::create(Firework* mFirework, Firework* parent=nullptr)
 {
 	Vector3 pos, vel, acc;
-	float age, mass, dump;
+	float age, mass;
 	Vector4 col;
 	if (parent != nullptr) {
 		pos = parent->getPosition();
@@ -30,8 +31,7 @@ void mFireworkRules::create(Firework* mFirework, Firework* parent=nullptr)
 	acc = Vector3(0, -10, 0);
 	col = Vector4(0.1*vel, 1);
 	age = minAge_ + rand() * maxAge_;
-
-	mFirework = new Firework(pos, vel, acc, age, mass, dump, col, age, mType_, mPayloads_.size(),mSystem_);
-	mSystem_->addFirework(mFirework);
-
+	
+	//mFirework = new Firework(pos, vel, acc, age, mass, dump, col, age, mPayloads_.size(),mSystem_);
+	//mSystem_->addFirework(mFirework);
 }

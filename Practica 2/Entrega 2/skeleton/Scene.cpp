@@ -3,8 +3,8 @@
 
 Scene::Scene(Vector3 p)
 {
-	mParticleSystem = new ParticleSystem(p,0.1);
-	
+	mParticleSystem = new ParticleSystem(p,0.6);
+	mFireworkSystem = new FireworkSystem();
 }
 
 Scene::~Scene()

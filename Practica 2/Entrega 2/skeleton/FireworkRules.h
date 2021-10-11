@@ -1,6 +1,6 @@
 #pragma once
 #include "core.hpp"
-enum Type { NONE, Basic, Simple, Multiple }; //basico no explota en más, Simple genera fuegos fuegos basicos, multiples genera simples
+enum Type { NONE,BASIC, EXPLOSIONGLOBE, EXPLOSIONMULTIPLE ,NUM_TYPES };
 
 struct Payload {
     Type mType_;
@@ -10,19 +10,22 @@ struct Payload {
 };
 class FireworkSystem;
 class Firework;
-class mFireworkRules
+struct FireworkRules
 {
-public:
-    mFireworkRules() {}
-    mFireworkRules(Type mType, float minAge, float maxAge, Vector3 minVelocity, Vector3 maxVelocity, float damp, int count, FireworkSystem* system);
+    FireworkRules() {}
+    FireworkRules(Type type,float minAge, float maxAge, Vector3 minVelocity, Vector3 maxVelocity, float damp, int count, FireworkSystem* system);
     void create(Firework* mFirework, Firework* parent);
-    void setType(Type t) { mType_ = t; }
 
+    FireworkRules getRuleFromType(const Type& type);
+    std::vector<Payload> getPayloads() { return mPayloads_; }
 protected:
-    Type mType_;
+  
+    Type fireworkType;
+    FireworkSystem* mSystem_;
+    
     float minAge_, maxAge_;
     Vector3 minVelocity_, maxVelocity_;
     float damp_;
     std::vector<Payload> mPayloads_;
-    FireworkSystem* mSystem_;
+    std::vector<FireworkRules> mRules_;
 };
