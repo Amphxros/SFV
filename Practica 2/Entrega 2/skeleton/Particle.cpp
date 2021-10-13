@@ -15,7 +15,8 @@ Particle::~Particle()
 {
 	DeregisterRenderItem(mBody_);
 	delete mBody_;
-	//delete mTransform_;
+	delete mTransform_;
+	
 }
 
 void Particle::integrate(double t)

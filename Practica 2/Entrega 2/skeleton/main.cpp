@@ -51,7 +51,7 @@ void initPhysics(bool interactive)
 	sceneDesc.filterShader = contactReportFilterShader;
 	sceneDesc.simulationEventCallback = &gContactReportCallback;
 	gScene = gPhysics->createScene(sceneDesc);
-	mScene = new Scene(GetCamera()->getEye() - Vector3(5, -10, 5));
+	mScene = new Scene(GetCamera()->getEye() - Vector3(5, 0, 5));
 	// ------------------------------------------------------
 
 	
@@ -99,7 +99,7 @@ void keyPress(unsigned char key, const PxTransform& camera)
 	{
 	case ' ':
 	{
-		mScene->shootFireWork(0);
+		
 		break;
 	}
 	default:

@@ -1,16 +1,4 @@
 ﻿  Particle.cpp
-  ParticleSystem.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
-           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen Particle.cpp)
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen Particle.cpp)
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
-           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen ParticleSystem.cpp)
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen ParticleSystem.cpp)
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Particle.h(11,3): warning C4265: "Particle": la clase tiene funciones virtuales, pero su destructor no trivial no es virtual; puede que las instancias de esta clase no se destruyan correctamente (compilando archivo de origen Particle.cpp)
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Particle.cpp(7,45): warning C5038: miembro de datos "Particle::mDamp_" se inicializará después de miembro de datos "Particle::mMass_"
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Particle.cpp(7,73): warning C5038: miembro de datos "Particle::mRadius_" se inicializará después de miembro de datos "Particle::mColor_"
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Particle.cpp(7,87): warning C5038: miembro de datos "Particle::mColor_" se inicializará después de miembro de datos "Particle::limit_"
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Particle.h(11,3): warning C4265: "Particle": la clase tiene funciones virtuales, pero su destructor no trivial no es virtual; puede que las instancias de esta clase no se destruyan correctamente (compilando archivo de origen ParticleSystem.cpp)
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\ParticleSystem.cpp(4,2): warning C5038: miembro de datos "ParticleSystem::mPoint_" se inicializará después de miembro de datos "ParticleSystem::gen_time_"
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\ParticleSystem.cpp(57,24): warning C5219: conversión implícita de "int" a "float"; posible pérdida de datos
-  game.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\bin\gameDEBUG.exe
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica0\skeleton\Particle.cpp(4,48): warning C5038: miembro de datos "Particle::mBody_" se inicializará después de miembro de datos "Particle::mMass_"
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica0\skeleton\Particle.cpp(9,46): warning C5038: miembro de datos "Particle::mBody_" se inicializará después de miembro de datos "Particle::mMass_"
+LINK : fatal error LNK1168: no se puede abrir ..\bin\gameDEBUG.exe para escritura

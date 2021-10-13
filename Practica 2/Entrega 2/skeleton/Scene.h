@@ -9,8 +9,7 @@
 #include "RenderUtils.hpp"
 #include "callbacks.hpp"
 
-#include "ParticleSystem.h"
-#include "FireworkSystem.h"
+#include "ParticleManager.h"
 #include <list>
 using namespace physx;
 
@@ -23,12 +22,8 @@ public:
 
 	void run(double t);
 
-	//para añadir fw a la escena por teclado
-	void shootFireWork(int t);
-
 private:	
-	ParticleSystem* mParticleSystem;
-	FireworkSystem* mFireworkSystem;
+	ParticleManager* mManager_;
 
 };
 

@@ -1,2 +1,2 @@
-PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.29.30133:TargetPlatformVersion=10.0.19041.0:
-debug|x64|C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\|
+#TargetFrameworkVersion=v4.0:PlatformToolSet=v142:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=10.0
+debug|x64|C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica0\skeleton\|

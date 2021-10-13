@@ -9,14 +9,12 @@ class Particle
 public:
 	Particle(Vector3 pos, Vector3 speed, Vector3 accel, float drag, float mass, float rd, Vector4 col, double limit);
 	~Particle();
-	virtual void integrate(double t);
+	void integrate(double t);
 	bool isTimeOver(double t);
 
 	inline Vector3 getPosition() { return mPos_; }
 	inline Vector3 getSpeed() { return mSpeed_; }
 	inline Vector3 getAccel() { return mAccel_; }
-
-	
 
 	inline void setPosition(Vector3 pos) { mPos_ = pos; }
 	inline void setSpeed(Vector3 speed) { mSpeed_ = speed; }

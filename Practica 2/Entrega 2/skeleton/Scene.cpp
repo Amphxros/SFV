@@ -3,27 +3,18 @@
 
 Scene::Scene(Vector3 p)
 {
-	mParticleSystem = new ParticleSystem(p,0.6);
-	mFireworkSystem = new FireworkSystem();
+	mManager_ = new ParticleManager(p,0.1);
+	
 }
 
 Scene::~Scene()
 {
-	delete mParticleSystem;
+	delete mManager_;
 }
 
 
 void Scene::run(double t)
 {
-	mParticleSystem->integrate(t);
-}
-
-void Scene::shootFireWork(int t)
-{
-	switch (t)
-	{
-	default:
-		break;
-	}
+	mManager_->integrate(t);
 }
 
