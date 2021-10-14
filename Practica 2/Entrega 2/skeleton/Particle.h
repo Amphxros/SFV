@@ -16,6 +16,12 @@ public:
 	inline Vector3 getSpeed() { return mSpeed_; }
 	inline Vector3 getAccel() { return mAccel_; }
 
+	inline float getAge() { return age_; }
+	inline void setAge(float age) { age_ = age; }
+
+	inline float getDump() { return mDamp_; }
+	inline void setDamping(float d) { mDamp_ = d; }
+
 	inline void setPosition(Vector3 pos) { mPos_ = pos; }
 	inline void setSpeed(Vector3 speed) { mSpeed_ = speed; }
 	inline void setAcceleration(Vector3 accel) { mAccel_= accel; }
@@ -36,7 +42,7 @@ protected:
 	float mDamp_;		//damping
 
 	double time_;
-	double limit_;
+	double age_;
 
 	std::list<Particle*>::iterator mIt_;
 	
