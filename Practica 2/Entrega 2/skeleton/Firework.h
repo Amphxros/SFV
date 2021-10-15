@@ -1,50 +1,42 @@
-#pragma once
+
 #include "Particle.h"
 #include <vector>
-#define radians 3.1415/180
-enum Type {SPHERE, CIRCLE, BASIC,SPARK, NUM_RULES};
+
+enum Type{SPHERE, SPARK, ASPERSOR, NONE};
 class Firework :
-    public Particle
-{
+	public Particle {
 public:
-    Firework(Type type, Vector3 pos, Vector4 color);
-    virtual ~Firework(){}
-    
-    inline Type getType() { return fwType_; }
-    inline void setType(Type type) { fwType_ = type; }
-    virtual void integrate(float t);
+	struct Payload {
+		Payload(unsigned type, unsigned count, Vector4 color);
+		void integrate(float t);
+		void explode();
 
-    struct Payload {
-        Type payloadType;
-        unsigned int payloadCount;
-        Vector4 color;
-        std::vector<Particle*> mParticles_;
-        Payload() {};
-        ~Payload();
-        void set(Type type, int count);
-        void integrate(float t);
-        void setPosition(Vector3 pos);
-    };
+		unsigned payloadType_;
+		unsigned payloadCount_;
+		Vector4 color;
+		std::vector<Particle*> mParticles_;
+	};
 
-    struct FireWorkRule {
-        Type ruleType;
-        float minAge_, maxAge_;
+	struct FireWorkRule {
+		unsigned ruleType;
+		float minAge_, maxAge_;
+		Vector3 minSpeed_, maxSpeed_;
+		float damping_;
+		std::vector<Payload*> mPayloads_;
 
-        Vector3 minSpeed_, maxSpeed_;
-        float damping;
+		void set(unsigned type, float minAge, float maxAge, Vector3 minSpeed, Vector3 maxSpeed);
+		void create(Firework* firework, const Firework* parent = NULL)	const;
+	};
 
-        std::vector<Payload*> mPayloads;
+	int rule_;
+	unsigned fireWorkType;
+	FireWorkRule** rules = new FireWorkRule*[3];
+	Firework(Vector3 pos, Vector3 vel, Vector4 color, int rule, int type, int count);
+	virtual ~Firework();
 
-        void setParameters(Type type, float minAge, float maxAge, Vector3 minVel, Vector3 maxVel, float damp);
-        void create(Firework* fw, Firework* parent);
-        void integrate(float t);
-    };
+	void initFireworkRules(int type, int count);
 
-
-protected:
-    Type fwType_;
-    void initFireworkRules();
-    std::vector<FireWorkRule> rules;
-    bool payload_Created=false;
+	void integrate(float t);
+	inline bool isActive() { return fireWorkType!=Type::NONE; }
+	void setInactive();
 };
-

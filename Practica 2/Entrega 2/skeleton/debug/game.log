@@ -1,4 +1,16 @@
-﻿  Particle.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica0\skeleton\Particle.cpp(4,48): warning C5038: miembro de datos "Particle::mBody_" se inicializará después de miembro de datos "Particle::mMass_"
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica0\skeleton\Particle.cpp(9,46): warning C5038: miembro de datos "Particle::mBody_" se inicializará después de miembro de datos "Particle::mMass_"
-LINK : fatal error LNK1168: no se puede abrir ..\bin\gameDEBUG.exe para escritura
+﻿  Firework.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
+           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(17,22): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(40,21): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(49,21): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(58,21): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(71,103): warning C4100: 'maxSpeed': parámetro formal sin referencia
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(71,85): warning C4100: 'minSpeed': parámetro formal sin referencia
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(71,69): warning C4100: 'maxAge': parámetro formal sin referencia
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(71,55): warning C4100: 'minAge': parámetro formal sin referencia
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(71,43): warning C4100: 'type': parámetro formal sin referencia
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(79,36): warning C5219: conversión implícita de "int" a "const float"; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(89,18): warning C5219: conversión implícita de "int" a "float"; posible pérdida de datos
+  game.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\bin\gameDEBUG.exe

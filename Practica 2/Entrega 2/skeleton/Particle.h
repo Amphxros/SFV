@@ -26,6 +26,8 @@ public:
 	inline void setSpeed(Vector3 speed) { mSpeed_ = speed; }
 	inline void setAcceleration(Vector3 accel) { mAccel_= accel; }
 
+	inline Vector4 getColor() { return mColor_; }
+	
 	inline std::list<Particle*>::iterator getIt() { return mIt_; }
 	inline void setIt(std::list<Particle*>::iterator it) { mIt_ = it; }
 	

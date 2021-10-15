@@ -10,6 +10,7 @@
 #include "callbacks.hpp"
 
 #include "ParticleManager.h"
+#include "Firework.h"
 #include <list>
 using namespace physx;
 
@@ -22,8 +23,11 @@ public:
 
 	void run(double t);
 
+	void addFireWork(Type t, Vector3 pos, Vector4 color);
+
 private:	
 	ParticleManager* mManager_;
+	std::vector<Firework*> mFireWorks_;
 
 };
 

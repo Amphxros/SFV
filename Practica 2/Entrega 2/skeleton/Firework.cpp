@@ -1,162 +1,169 @@
 #include "Firework.h"
 
-
-Firework::Payload::~Payload()
+Firework::Payload::Payload(unsigned type, unsigned count, Vector4 color):
+	payloadType_(type), payloadCount_(count), color(color)
 {
 }
-void Firework::Payload::set(Type type, int count)
-{
-	int ang = 360 / count;
-	switch (type)
-	{
-	case Type::SPHERE:
-		for (int i = 0; i < count; i++) {
-			for (int j = 0; j < count; j++) {
-				Particle* p = new Particle(Vector3(), Vector3(), Vector3(0, -9.81, 0), 0.9, 0.01, 3, color, 4);
-				p->setSpeed(Vector3(cos(2 * i * ang * radians) * sin(j * ang * radians), cos(-3.1415 / 2 * j * ang * radians) * cos(j * ang * radians) + sin(2 * i * ang * radians)* sin(j*ang*radians), 50));
-				mParticles_.push_back(p);
-			}
-		}
-		break;
-	case Type::CIRCLE:
-		for (int i = 0; i < count; i++) {
-			Particle* p= new Particle(Vector3(), Vector3(), Vector3(0, -9.81, 0), 0.9, 0.01, 3, color, 4);
-			
-			p->setSpeed(Vector3(cos(i * ang * radians), sin(i * ang * radians), 0));
-			mParticles_.push_back(p);
-		}
-		break;
-	case Type::SPARK:
-		for (int i = 0; i < count; i++) {
-			Particle* p = new Particle(Vector3(), Vector3(), Vector3(0, -9.81, 0), 0.9, 0.01, 3, color, 4);
-			int j = rand() * count;
-			p->setSpeed(Vector3(cos(j * ang * radians), sin(j * ang * radians), 0));
-			mParticles_.push_back(p);
-		}
-		break;
-	case Type::BASIC:
-		for (int i = 0; i < count; i++) {
-			Particle* p = new Particle(Vector3(), Vector3(), Vector3(0, -9.81, 0), 0.9, 0.01, 3, color, 4);
-			p->setSpeed(Vector3(i,i,i));
-			mParticles_.push_back(p);
-		}
-		break;
-	default:
-		break;
 
-	}
-}
 void Firework::Payload::integrate(float t)
 {
-	if (!mParticles_.empty()) {
-		for (auto p : mParticles_) {
-			p->integrate(t);
-			if (p->isTimeOver(t)) {
-				//borramos las particulas del payload
+	auto it = mParticles_.begin();
+	while (!mParticles_.empty() && it != mParticles_.end()) {
+		Particle* p = *it;
+		p->integrate(t);
+		if (p->isTimeOver(t)) {
+			//creamos particulas
+			if (payloadType_ == Type::SPHERE && payloadCount_!=0) {
+				for (int i = 0; i<payloadCount_; i++) {
+					Particle* f = new Particle(p->getPosition(), Vector3(), Vector3(0, -9.81, 0), 0.3, 0.001, 0.5, p->getColor(), 1);
+					f->setSpeed(Vector3(cos(rand() % 360) * 10, 10, sin(rand() % 360) * 10));
+					mParticles_.push_back(f);
+				}
+				payloadCount_--;
 			}
+
+			
+			mParticles_.erase(mParticles_.begin());
+			delete p;
+			it = mParticles_.begin();
 		}
+		else if (!mParticles_.empty())
+			it++;
 	}
 }
-void Firework::Payload::setPosition(Vector3 pos)
+
+void Firework::Payload::explode()
 {
-	for (auto p : mParticles_)
-		p->setPosition(pos);
-}
-void Firework::FireWorkRule::setParameters(Type type, float minAge, float maxAge, Vector3 minVel, Vector3 maxVel, float damp)
-{
-	ruleType = type;
-	minAge_ = minAge;
-	maxAge_ = maxAge;
-	minSpeed_ = minVel;
-	maxSpeed_ = maxVel;
-	damping = damp;
+	switch (payloadType_)
+	{
+	case Type::SPHERE:
+		for (int i = 0; i < payloadCount_; i++) {
+			Particle* p = new Particle(Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), 0.9, 0.001, 1, color, 3);
+			p->setSpeed(Vector3(cos(rand() % 360) * 10, 10, sin(rand() % 360) * 10));
+			p->setAcceleration(Vector3(0, -9.8, 0));
+			mParticles_.push_back(p);
+		}
+		break;
+		
+	case Type::SPARK:
+		for (int i = 0; i < payloadCount_; i++) {
+			Particle* p = new Particle(Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), 0.9, 0.001, 1, color, 3);
+			p->setSpeed(Vector3(cos(rand() % 360) * 10, 10 * 10, sin(rand() % 360) * 10));
+			p->setAcceleration(Vector3(0, -9.8, 0));
+			mParticles_.push_back(p);
+		}
+		break;
+		
+	case Type::ASPERSOR:
+		for (int i = 0; i < payloadCount_; i++) {
+			Particle* p = new Particle(Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), 0.9, 0.001, 1, color, 3);
+			p->setSpeed(Vector3(cos(rand() % 360) * 360, 0, sin(rand() % 360) * 360));
+			p->setAcceleration(Vector3(0, -9.8, 0));
+			mParticles_.push_back(p);
+		}
+		break;
+
+	default:
+		break;
+	}
 }
 
-void Firework::FireWorkRule::create(Firework* fw, Firework* parent)
+void Firework::FireWorkRule::set(unsigned type, float minAge, float maxAge, Vector3 minSpeed, Vector3 maxSpeed)
 {
-	fw->setType(ruleType);
-	fw->setAge(minAge_ + rand() * maxAge_);
 
-	Vector3 vel,start;
+}
+
+void Firework::FireWorkRule::create(Firework* firework, const Firework* parent) const
+{
+	firework->fireWorkType = ruleType;
+	firework->setAge(minAge_ + rand() % (int)(maxAge_ - minAge_));
+
+	Vector3 vel;
 	if (parent != nullptr) {
-		fw->setPosition(parent->getPosition());
-		vel += parent->getSpeed();
+		firework->setPosition(parent->mPos_);
+		vel += parent->mSpeed_;
 	}
 	else {
-		int x = rand() * 3 - 1;
-		start.x = 5.0f * x;
-		fw->setPosition(start);
+		Vector3 ini;
+		int x = (rand() % 3) - 1;
+		ini.x = 5.0f * x;
+		firework->setPosition(ini);
 	}
 
-	vel += minSpeed_;
-	float x, y, z;
-	vel.x += rand() * maxSpeed_.x;
-	vel.y += rand() * maxSpeed_.y;
-	vel.z += rand() * maxSpeed_.z;
-	fw->setSpeed(vel);
-	fw->setDamping(damping);
-	fw->setAcceleration(Vector3(0, -9.81, 0));
+	vel = minSpeed_ + rand()* (Vector3)(maxSpeed_ - minSpeed_);
+	firework->setSpeed(vel);
+	firework->setDamping(damping_);
 }
 
-void Firework::FireWorkRule::integrate(float t)
+Firework::Firework(Vector3 pos, Vector3 vel, Vector4 color, int rule, int type, int count):
+	Particle(pos,vel,Vector3(), 0.7, 0.001,2,color,7), rule_(rule), fireWorkType(type)
 {
-	for (int i = 0; i < mPayloads.size(); i++) {
-		mPayloads[i]->integrate(t);
+	rules[rule_] = new FireWorkRule();
+	initFireworkRules(fireWorkType, count);
+}
+
+Firework::~Firework()
+{
+	auto it = rules[rule_]->mPayloads_.begin();
+	while (!rules[rule_]->mPayloads_.empty() && it != rules[rule_]->mPayloads_.end()) {
+		Payload* p = *it;
+		if (!p->mParticles_.empty()) {
+			while (!p->mParticles_.empty()) {
+				Particle* prt = *p->mParticles_.begin();
+				p->mParticles_.erase(p->mParticles_.begin());
+				delete prt;
+			}
+		}
+		else {
+			rules[rule_]->mPayloads_.erase(rules[rule_]->mPayloads_.begin());
+			it = rules[rule_]->mPayloads_.begin();
+		}
+		if (!rules[rule_]->mPayloads_.empty()) it++;
 	}
 }
 
-Firework::Firework(Type type, Vector3 pos, Vector4 color): 
-	Particle(pos,Vector3(), Vector3(),0.9,0.001, 3, color,10), fwType_(type)
+void Firework::initFireworkRules(int type, int count)
 {
+	rules[rule_]->set(type, 1.0, 5.0, Vector3(-10, -10, 10), Vector3(10, 150, 20));
+	rules[rule_]->mPayloads_.push_back(new Payload(type, count, mColor_));
 }
+
 
 void Firework::integrate(float t)
 {
-	if (!payload_Created) {
+	if (isActive()) {
 		Particle::integrate(t);
 		if (Particle::isTimeOver(t)) {
-			///crear las particulas...
-			for (int i = 0; i < rules[fwType_].mPayloads.size(); i++) {
-				int r = rand() * rules[fwType_].mPayloads.size();
-				rules[fwType_].mPayloads[i]->set(fwType_, r);
-			}
-			//....
+			setInactive();
+			for (Payload* p : rules[rule_]->mPayloads_) {
+				
+				p->explode();
 
-			payload_Created = true;
+				for (auto i : p->mParticles_) {
+					i->setPosition(mPos_);
+				}
+			}
+			mBody_->release();
 		}
 	}
 	else {
-		rules[fwType_].integrate(t);
+		auto it = rules[rule_]->mPayloads_.begin();
+		while (!rules[rule_]->mPayloads_.empty() && it != rules[rule_]->mPayloads_.end()) {
+			Payload* p = *it;
+			p->integrate(t);
+			if (p->mParticles_.empty()) {
+
+				rules[rule_]->mPayloads_.erase(rules[rule_]->mPayloads_.begin());
+				it = rules[rule_]->mPayloads_.begin();
+			}
+			else if (!rules[rule_]->mPayloads_.empty()) {
+				it++;
+			}
+		}
 	}
 }
 
-void Firework::initFireworkRules()
+void Firework::setInactive()
 {
-	rules.reserve((int)Type::NUM_RULES);
-	for (int i = 0; i < rules.size(); i++) {
-		rules[i] = FireWorkRule();
-	}
-	rules[0].setParameters(Type::CIRCLE, 0.5, 1.4, Vector3(-5, 25, -5), Vector3(5, 28, 5), 0.1);
-	rules[1].setParameters(Type::SPHERE, 0.7, 2.4, Vector3(-5, 50, -5), Vector3(5, 28, 5), 0.1);
-	rules[2].setParameters(Type::SPARK, 2.7, 3.5, Vector3(-5, 50, -5), Vector3(5, 30, 5), 0.1);
-	rules[3].setParameters(Type::BASIC, 2.7, 3.5, Vector3(-5, 50, -5), Vector3(5, 30, 5), 0.1);
-	
-	Payload* p = new Payload();
-	p->set(Type::BASIC, 5);
-	rules[0].mPayloads.push_back(p);
-	p->set(Type::SPARK, 10);
-	rules[0].mPayloads.push_back(p);
-	
-	p->set(Type::SPARK, 3);
-	rules[1].mPayloads.push_back(p);
-	p->set(Type::SPHERE, 60);
-	rules[1].mPayloads.push_back(p);
-	p->set(Type::SPARK, 3);
-
-	p->set(Type::SPARK, 3);
-	rules[2].mPayloads.push_back(p);
-	p->set(Type::CIRCLE, 10);
-	rules[2].mPayloads.push_back(p);
-	p->set(Type::SPARK, 3);
+	fireWorkType = Type::NONE;
 }
-

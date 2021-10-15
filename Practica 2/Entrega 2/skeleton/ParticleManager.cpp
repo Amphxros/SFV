@@ -31,11 +31,13 @@ void ParticleManager::integrate(double t)
 	}
 
 	for (auto& p : mParticles_) {
-		p->integrate(t);
+		if (p != nullptr) {
+			p->integrate(t);
 
-		if (p->isTimeOver(t)) {
-			mParticles_.erase(p->getIt());
-			delete p;
+			if (p->isTimeOver(t)) {
+				mParticles_.erase(p->getIt());
+				delete p;
+			}
 		}
 	}
 
