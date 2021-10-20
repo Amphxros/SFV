@@ -103,7 +103,7 @@ void keyPress(unsigned char key, const PxTransform& camera)
 		break;
 	}
 	case 'Z':
-		mScene->addFireWork(Type::SPHERE, GetCamera()->getEye()- Vector3(150,0,150),Vector4(1,0.2,0.7,1));
+		mScene->addFireWork(Type::SPHERE, GetCamera()->getEye()- Vector3(150,0,100),Vector4(1,0.2,0.7,1));
 		break;
 		
 	case 'X':
@@ -112,7 +112,7 @@ void keyPress(unsigned char key, const PxTransform& camera)
 		break;
 		
 	case 'C':
-		mScene->addFireWork(Type::ASPERSOR, GetCamera()->getEye()- Vector3(100, 0, 100), Vector4(0.3, 0.3, 0.7, 1));
+		mScene->addFireWork(Type::ASPERSOR, GetCamera()->getEye()- Vector3(50, 0, 100), Vector4(0.3, 0.3, 0.7, 1));
 		break;
 
 	default:

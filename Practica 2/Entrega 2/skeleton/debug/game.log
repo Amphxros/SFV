@@ -1,7 +1,76 @@
-﻿  Firework.cpp
+﻿  callbacks.cpp
+  Firework.cpp
+  main.cpp
+  Particle.cpp
+  ParticleManager.cpp
+  RenderUtils.cpp
+  Camera.cpp
+  Render.cpp
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
-           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount'
+           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen Firework.cpp)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen Firework.cpp)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
+           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen ParticleManager.cpp)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen ParticleManager.cpp)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
+           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen main.cpp)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen main.cpp)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
+           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen Particle.cpp)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen Particle.cpp)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Camera.cpp(88,19): warning C5219: conversión implícita de "int" a "float"; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Camera.cpp(90,19): warning C5219: conversión implícita de "int" a "float"; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
+           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen RenderUtils.cpp)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen RenderUtils.cpp)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
+           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen callbacks.cpp)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen callbacks.cpp)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
+           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen Render\Render.cpp)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen Render\Render.cpp)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\foundation\PxVec3.h(303): warning C5045: El compilador insertará la mitigación de Spectre para la carga de memoria si se especificó el modificador /Qspectre
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\foundation\PxVec3.h(302) : nota: el intervalo "m" del índice se comprobó por comparación en esta línea
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\foundation\PxVec3.h(303) : nota: suministra la llamada en esta línea
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\foundation\PxVec3.h(293): warning C5045: El compilador insertará la mitigación de Spectre para la carga de memoria si se especificó el modificador /Qspectre
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\foundation\PxVec3.h(293) : nota: el intervalo "m" del índice se comprobó por comparación en esta línea
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\foundation\PxVec3.h(293) : nota: suministra la llamada en esta línea
+  Scene.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
+           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen Scene.cpp)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen Scene.cpp)
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Particle.cpp(7,45): warning C5038: miembro de datos "Particle::mDamp_" se inicializará después de miembro de datos "Particle::mMass_"
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Particle.cpp(7,73): warning C5038: miembro de datos "Particle::mRadius_" se inicializará después de miembro de datos "Particle::mColor_"
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Particle.cpp(7,87): warning C5038: miembro de datos "Particle::mColor_" se inicializará después de miembro de datos "Particle::age_"
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\ParticleManager.cpp(4,2): warning C5038: miembro de datos "ParticleManager::mPoint_" se inicializará después de miembro de datos "ParticleManager::gen_time_"
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\ParticleManager.cpp(59,24): warning C5219: conversión implícita de "int" a "float"; posible pérdida de datos
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(341): warning C5045: El compilador insertará la mitigación de Spectre para la carga de memoria si se especificó el modificador /Qspectre
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(336) : nota: el intervalo "j" del índice se comprobó por comparación en esta línea
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(341) : nota: suministra la llamada en esta línea
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(334): warning C5045: El compilador insertará la mitigación de Spectre para la carga de memoria si se especificó el modificador /Qspectre
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(329) : nota: el intervalo "i" del índice se comprobó por comparación en esta línea
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(334) : nota: suministra la carga de memoria en esta línea
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(151): warning C5045: El compilador insertará la mitigación de Spectre para la carga de memoria si se especificó el modificador /Qspectre
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(144) : nota: el intervalo "" del índice se comprobó por comparación en esta línea
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(151) : nota: suministra la llamada en esta línea
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(136): warning C5045: El compilador insertará la mitigación de Spectre para la carga de memoria si se especificó el modificador /Qspectre
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(121) : nota: el intervalo "nbPolys" del índice se comprobó por comparación en esta línea
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(136) : nota: suministra la llamada en esta línea
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(124): warning C5045: El compilador insertará la mitigación de Spectre para la carga de memoria si se especificó el modificador /Qspectre
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(121) : nota: el intervalo "nbPolys" del índice se comprobó por comparación en esta línea
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(124) : nota: suministra la carga de memoria en esta línea
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(208): warning C5045: El compilador insertará la mitigación de Spectre para la carga de memoria si se especificó el modificador /Qspectre
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(201) : nota: el intervalo "" del índice se comprobó por comparación en esta línea
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(208) : nota: suministra la llamada en esta línea
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(195): warning C5045: El compilador insertará la mitigación de Spectre para la carga de memoria si se especificó el modificador /Qspectre
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(181) : nota: el intervalo "triangleCount" del índice se comprobó por comparación en esta línea
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(195) : nota: suministra la llamada en esta línea
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(189): warning C5045: El compilador insertará la mitigación de Spectre para la carga de memoria si se especificó el modificador /Qspectre
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(181) : nota: el intervalo "triangleCount" del índice se comprobó por comparación en esta línea
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Render\Render.cpp(189) : nota: suministra la llamada en esta línea
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\foundation\PxVec3.h(303): warning C5045: El compilador insertará la mitigación de Spectre para la carga de memoria si se especificó el modificador /Qspectre
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\foundation\PxVec3.h(302) : nota: el intervalo "m" del índice se comprobó por comparación en esta línea
+  C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\foundation\PxVec3.h(303) : nota: suministra la llamada en esta línea
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(17,22): warning C4018: '<': no coinciden signed/unsigned
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(40,21): warning C4018: '<': no coinciden signed/unsigned
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(49,21): warning C4018: '<': no coinciden signed/unsigned
@@ -13,4 +82,5 @@ C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\ske
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(71,43): warning C4100: 'type': parámetro formal sin referencia
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(79,36): warning C5219: conversión implícita de "int" a "const float"; posible pérdida de datos
 C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(89,18): warning C5219: conversión implícita de "int" a "float"; posible pérdida de datos
-  game.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\bin\gameDEBUG.exe
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Scene.cpp(4,22): warning C4100: 'p': parámetro formal sin referencia
+LINK : fatal error LNK1104: no se puede abrir el archivo '..\bin\gameDEBUG.exe'

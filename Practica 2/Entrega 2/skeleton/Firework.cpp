@@ -36,19 +36,19 @@ void Firework::Payload::explode()
 {
 	switch (payloadType_)
 	{
-	case Type::SPHERE:
+	case Type::SPARK:
 		for (int i = 0; i < payloadCount_; i++) {
-			Particle* p = new Particle(Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), 0.9, 0.001, 1, color, 3);
+			Particle* p = new Particle(Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), 0.9, 0.001,1, color, 3);
 			p->setSpeed(Vector3(cos(rand() % 360) * 10, 10, sin(rand() % 360) * 10));
 			p->setAcceleration(Vector3(0, -9.8, 0));
 			mParticles_.push_back(p);
 		}
 		break;
 		
-	case Type::SPARK:
+	case Type::SPHERE:
 		for (int i = 0; i < payloadCount_; i++) {
 			Particle* p = new Particle(Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), 0.9, 0.001, 1, color, 3);
-			p->setSpeed(Vector3(cos(rand() % 360) * 10, 10 * 10, sin(rand() % 360) * 10));
+			p->setSpeed(Vector3(cos(rand() % 360) * 10, 10* sin(i*360/payloadCount_), sin(rand() % 360) * 10));
 			p->setAcceleration(Vector3(0, -9.8, 0));
 			mParticles_.push_back(p);
 		}

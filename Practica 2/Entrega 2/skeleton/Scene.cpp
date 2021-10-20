@@ -26,7 +26,7 @@ void Scene::run(double t)
 
 void Scene::addFireWork(Type t, Vector3 pos, Vector4 color)
 {
-	Firework* f = new Firework(pos,Vector3(0,10,0),color,0,(int)t, 10);
+	Firework* f = new Firework(pos,Vector3(0,10,0),color,0,(int)t, 20);
 	mFireWorks_.push_back(f);
 }
 
