@@ -59,7 +59,7 @@ void ParticleManager::addNRandomParticles(int n)
 			y = 0.02f +  rand() % 3;
 		}
 
-		add(mPoint_ - Vector3(5, 0, 5), -Vector3(x, y, z), Vector3(0,-10,0), 1, 0.9, 0.2, Vector4(1, 0.1, 0.2, 1), 3);
+		add(mPoint_ - Vector3(5, 0, 5), -Vector3(x, y, z), Vector3(0,0,0), 1, 0.9, 0.2, Vector4(1, 0.1, 0.2, 1), 3);
 
 	}
 }

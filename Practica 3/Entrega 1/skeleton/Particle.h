@@ -22,6 +22,8 @@ public:
 	inline float getDump() { return mDamp_; }
 	inline void setDamping(float d) { mDamp_ = d; }
 
+	inline float getMass() { return mMass_; }
+
 	inline void setPosition(Vector3 pos) { mPos_ = pos; }
 	inline void setSpeed(Vector3 speed) { mSpeed_ = speed; }
 	inline void setAcceleration(Vector3 accel) { mAccel_= accel; }

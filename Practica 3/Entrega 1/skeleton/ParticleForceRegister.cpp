@@ -27,6 +27,13 @@ void ParticleForceRegister::clear()
 void ParticleForceRegister::integrateForces(float t)
 {
 	for (auto r : mRegistry_) {
-		r.mParticle_->addForce(r.mGenerator_->getForce());
+		r.mGenerator_->integrateForce(r.mParticle_, t);
+		if (r.mParticle_ != nullptr) {
+			r.mParticle_->integrate(t);
+
+			if (r.mParticle_->isTimeOver(t)) {
+				
+			}
+		}
 	}
 }
