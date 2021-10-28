@@ -21,6 +21,8 @@ bool WindGenerator::isParticleOnMyZone(Particle* p)
 	return distance(p->getPosition(), mParticleWind->getPosition()) < rd_;
 }
 
+
+/// EXPLICACION: la distancia en un plano entre un punto A y B es el modulo (linea recta)-> modulo= raiz(x^2+ y^2 + z^2)
 float WindGenerator::distance(Vector3 posA, Vector3 posB)
 {
 	float x = (posA.x - posB.x)*(posA.x - posB.x);

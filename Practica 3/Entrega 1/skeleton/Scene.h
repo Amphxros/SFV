@@ -17,7 +17,7 @@
 using namespace physx;
 
 
-enum FORCES {EARTH_GRAVITY, LUNAR_GRAVITY, DRAGGING, WIND, NUM_FORCES};
+enum FORCES {EARTH_GRAVITY, LUNAR_GRAVITY, DRAGGING, WIND, EXPLOSION,NUM_FORCES};
 //equivalent to a particle manager, basically handle the particle creation, destruction and update
 class Scene
 {

@@ -95,6 +95,7 @@ void keyPress(unsigned char key, const PxTransform& camera)
 {
 	PX_UNUSED(camera);
 	
+
 	switch(toupper(key))
 	{
 	case 'J':
@@ -110,7 +111,15 @@ void keyPress(unsigned char key, const PxTransform& camera)
 		mScene->addParticle(FORCES::EARTH_GRAVITY, GetCamera()->getEye() - Vector3(150, -150, 100), Vector3(0, 10, 0), Vector4(0.9, 0.4, 0.9, 1));
 		break;
 	}
-
+	case 'E':
+		for (int i = 0; i < 50; i++) {
+			int rx = 1+rand() % 9;
+			int ry = 1+rand() % 9;
+			int rz = 1+rand() % 9;
+			mScene->addParticle(FORCES::EXPLOSION, Vector3(-50, 0, 50) + Vector3(rx, ry, rz), Vector3(0, 0, 0), Vector4(0.9, 0.5, 0, 1));
+			mScene->addParticle(FORCES::EXPLOSION, Vector3(-50, 0, 50) - Vector3(rx, ry, rz), Vector3(0, 0, 0), Vector4(0.9, 0.5, 0, 1));
+		}		
+		break;
 	case ' ':
 		break;
 	case 'Z':
