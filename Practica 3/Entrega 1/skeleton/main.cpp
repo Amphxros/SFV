@@ -45,7 +45,7 @@ void initPhysics(bool interactive)
 
 	// For Solid Rigids +++++++++++++++++++++++++++++++++++++
 	PxSceneDesc sceneDesc(gPhysics->getTolerancesScale());
-	sceneDesc.gravity = PxVec3(0.0f, -9.8f, 0.0f);
+	sceneDesc.gravity = PxVec3(0.0f, 0.0f, 0.0f); //No gravity here 
 	gDispatcher = PxDefaultCpuDispatcherCreate(2);
 	sceneDesc.cpuDispatcher = gDispatcher;
 	sceneDesc.filterShader = contactReportFilterShader;
@@ -97,22 +97,33 @@ void keyPress(unsigned char key, const PxTransform& camera)
 	
 	switch(toupper(key))
 	{
-	case ' ':
+	case 'J':
 	{
-		
+		mScene->addParticle(FORCES::WIND, Vector3(50, 50, 50), Vector3(-10, 0, -30), Vector4(0, 1, 0.5, 1));
+
 		break;
 	}
+	
+	case 'L':	//dos particulas a la vez para que se vea que evidentemente tienen diferente gravedad
+	{
+		mScene->addParticle(FORCES::LUNAR_GRAVITY, GetCamera()->getEye() - Vector3(150, -150, 150), Vector3(0, 10, 0), Vector4(0.2, 0.9, 0.9, 1));
+		mScene->addParticle(FORCES::EARTH_GRAVITY, GetCamera()->getEye() - Vector3(150, -150, 100), Vector3(0, 10, 0), Vector4(0.9, 0.4, 0.9, 1));
+		break;
+	}
+
+	case ' ':
+		break;
 	case 'Z':
-		mScene->addFireWork(Type::SPHERE, GetCamera()->getEye()- Vector3(150,0,150),Vector4(1,0.2,0.7,1));
+		mScene->addFireWork(Type::SPHERE, GetCamera()->getEye()- Vector3(150,50,100),Vector4(1,0.2,0.7,1));
 		break;
 		
 	case 'X':
 
-		mScene->addFireWork(Type::SPARK, GetCamera()->getEye()- Vector3(100, 0, 100), Vector4(1, 0.5, 0.2, 1));
+		mScene->addFireWork(Type::SPARK, GetCamera()->getEye()- Vector3(100, 50, 100), Vector4(1, 0.5, 0.2, 1));
 		break;
 		
 	case 'C':
-		mScene->addFireWork(Type::ASPERSOR, GetCamera()->getEye()- Vector3(100, 0, 100), Vector4(0.3, 0.3, 0.7, 1));
+		mScene->addFireWork(Type::ASPERSOR, GetCamera()->getEye()- Vector3(50, 50, 100), Vector4(0.3, 0.3, 0.7, 1));
 		break;
 
 	default:

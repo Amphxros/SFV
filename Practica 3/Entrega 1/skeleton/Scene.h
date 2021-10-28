@@ -11,13 +11,13 @@
 
 #include "ParticleManager.h"
 #include "Firework.h"
-#include <list>
-
-#include "ParticleForceRegister.h"
-#include "ParticleForceGenerator.h"
 #include "ParticleGravity.h"
+#include "ParticleForceRegistry.h"
+#include <list>
 using namespace physx;
 
+
+enum FORCES {EARTH_GRAVITY, LUNAR_GRAVITY, DRAGGING, WIND, NUM_FORCES};
 //equivalent to a particle manager, basically handle the particle creation, destruction and update
 class Scene
 {
@@ -27,19 +27,16 @@ public:
 
 	void run(double t);
 
-	void addParticle(Vector3 pos, Vector4 color);
 	void addFireWork(Type t, Vector3 pos, Vector4 color);
 
+	void addParticle(FORCES f, Vector3 pos, Vector3 vel,Vector4 color);
+
+
 private:	
-	Vector3 p_;
 	ParticleManager* mManager_;
 	std::vector<Firework*> mFireWorks_;
-	std::list<Particle*> mParticles_;
-	ParticleGravity* gravity;
-	ParticleForceRegister* mRegister;
+	std::vector<ParticleForceGenerator*> mForces_;
 
-	int scene = 3;
-	float time=0;
-
+	ParticleForceRegistry* registry;
 };
 

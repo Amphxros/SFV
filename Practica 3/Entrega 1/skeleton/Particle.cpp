@@ -4,7 +4,7 @@
 
 
 Particle::Particle(Vector3 pos, Vector3 speed, Vector3 accel, float damp, float mass, float rd, Vector4 col,double limit):
-	mPos_(pos), mSpeed_(speed), mAccel_(accel),mDamp_(damp), mMass_(mass), mRadius_(rd), mColor_(col), age_(limit)
+	mPos_(pos), mSpeed_(speed), mAccel_(accel),mDamp_(damp),mForce_(Vector3(0,0,0)), mMass_(mass), mRadius_(rd), mColor_(col), age_(limit)
 {
 	mTransform_ = new physx::PxTransform(mPos_);
 	mBody_ = new RenderItem(CreateShape(physx::PxSphereGeometry(mRadius_)), mTransform_, mColor_);
@@ -31,8 +31,7 @@ void Particle::integrate(double t)
 		*mTransform_ = physx::PxTransform(mPos_);
 
 		mSpeed_ += mAccel_ * t;
-		mAccel_ += mForce_ * (1 / mMass_);
-
+		mAccel_ += mForce_* (1/mMass_); 
 		mSpeed_ *= powf(mDamp_, t);
 	}
 

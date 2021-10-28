@@ -14,8 +14,10 @@
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="ParticleManager.cpp" />
     <ClCompile Include="Firework.cpp" />
-    <ClCompile Include="ParticleForceRegister.cpp" />
     <ClCompile Include="ParticleGravity.cpp" />
+    <ClCompile Include="ParticleForceRegistry.cpp" />
+    <ClCompile Include="ParticleForceGenerator.cpp" />
+    <ClCompile Include="WindGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core.hpp" />
@@ -32,8 +34,9 @@
     <ClInclude Include="ParticleManager.h" />
     <ClInclude Include="Firework.h" />
     <ClInclude Include="ParticleForceGenerator.h" />
-    <ClInclude Include="ParticleForceRegister.h" />
     <ClInclude Include="ParticleGravity.h" />
+    <ClInclude Include="ParticleForceRegistry.h" />
+    <ClInclude Include="WindGenerator.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">

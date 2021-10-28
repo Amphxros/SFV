@@ -19,10 +19,9 @@ public:
 	inline float getAge() { return age_; }
 	inline void setAge(float age) { age_ = age; }
 
+	inline float getMass() { return mMass_; }
 	inline float getDump() { return mDamp_; }
 	inline void setDamping(float d) { mDamp_ = d; }
-
-	inline float getMass() { return mMass_; }
 
 	inline void setPosition(Vector3 pos) { mPos_ = pos; }
 	inline void setSpeed(Vector3 speed) { mSpeed_ = speed; }
@@ -33,8 +32,11 @@ public:
 	inline std::list<Particle*>::iterator getIt() { return mIt_; }
 	inline void setIt(std::list<Particle*>::iterator it) { mIt_ = it; }
 	
+	inline Vector3 getForce() { return mForce_; }
+	inline void addForce(Vector3 force) { mForce_ += force; }
 	inline void clearForce() { mForce_ = Vector3(0, 0, 0); }
-	inline void addForce(const Vector3& f) { mForce_ += f; }
+
+	inline bool hasInfiniteMass() { return (1 / mMass_) <= 0; }
 
 protected:
 	//components for the physics of the particle
@@ -45,7 +47,7 @@ protected:
 	Vector3 mSpeed_;	//velocity
 	Vector3 mAccel_;	//acceleration
 
-	Vector3 mForce_;	//accumulated force
+	Vector3 mForce_;	
 
 	float mMass_;		//mass
 	float mDamp_;		//damping

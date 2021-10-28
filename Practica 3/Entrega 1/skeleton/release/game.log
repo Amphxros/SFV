@@ -1,20 +1,16 @@
 ﻿  Firework.cpp
+  main.cpp
+  Particle.cpp
+  ParticleForceGenerator.cpp
+  ParticleForceRegistry.cpp
+  ParticleGravity.cpp
+  ParticleManager.cpp
   Scene.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
-           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen Firework.cpp)
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen Firework.cpp)
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
-           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen Scene.cpp)
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen Scene.cpp)
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(51,2): warning C4061: el enumerador 'NUM_RULES' en la instrucción switch de la enumeración 'Type' no está controlado de forma explícita por una etiqueta de caso
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.h(5): message : vea la declaración de 'Type'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(83,27): warning C5219: conversión implícita de "int" a "float"; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(92,20): warning C5219: conversión implícita de "int" a "float"; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(98,15): warning C5219: conversión implícita de "int" a "float"; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(99,15): warning C5219: conversión implícita de "int" a "float"; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(100,15): warning C5219: conversión implícita de "int" a "float"; posible pérdida de datos
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(97,14): warning C4101: 'z': variable local sin referencia
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(97,11): warning C4101: 'y': variable local sin referencia
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(97,8): warning C4101: 'x': variable local sin referencia
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 2\Entrega 2\skeleton\Firework.cpp(108,20): warning C4388: '<': no coinciden signed/unsigned
-LINK : fatal error LNK1104: no se puede abrir el archivo '..\bin\game.exe'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\main.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\ParticleForceGenerator.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\Firework.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\ParticleGravity.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\ParticleForceRegistry.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\Scene.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\Particle.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\ParticleManager.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.

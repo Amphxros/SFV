@@ -2,10 +2,11 @@
 #include "Particle.h"
 #include <vector>
 
-enum Type{SPHERE, SPARK, ASPERSOR, NONE};
+enum Type{SPHERE, SPARK, ASPERSOR, NONE}; //None es equivalente a undefined, ademas sirve para determinar el nº de tipos disponibles
 class Firework :
 	public Particle {
 public:
+
 	struct Payload {
 		Payload(unsigned type, unsigned count, Vector4 color);
 		void integrate(float t);
@@ -30,7 +31,7 @@ public:
 
 	int rule_;
 	unsigned fireWorkType;
-	FireWorkRule** rules = new FireWorkRule*[3];
+	FireWorkRule** rules = new FireWorkRule*[Type::NONE];
 	Firework(Vector3 pos, Vector3 vel, Vector4 color, int rule, int type, int count);
 	virtual ~Firework();
 

@@ -4,10 +4,11 @@ class ParticleGravity :
     public ParticleForceGenerator
 {
 public:
-    ParticleGravity(const Vector3& gravity);
-    virtual void integrateForce(Particle* p, float t);
+    ParticleGravity(Vector3 gravity);
+    virtual ~ParticleGravity() {}
+
+    virtual void integrateForce(Particle* particle, float t) override;
 protected:
     Vector3 mGravity_;
-
 };
 
