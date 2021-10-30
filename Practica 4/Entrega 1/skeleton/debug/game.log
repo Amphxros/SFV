@@ -1,0 +1,8 @@
+﻿  Particle.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
+           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount'
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\Particle.cpp(7,45): warning C5038: miembro de datos "Particle::mDamp_" se inicializará después de miembro de datos "Particle::mForce_"
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\Particle.cpp(7,97): warning C5038: miembro de datos "Particle::mRadius_" se inicializará después de miembro de datos "Particle::mColor_"
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\Particle.cpp(7,111): warning C5038: miembro de datos "Particle::mColor_" se inicializará después de miembro de datos "Particle::age_"
+LINK : fatal error LNK1168: no se puede abrir ..\bin\gameDEBUG.exe para escritura
