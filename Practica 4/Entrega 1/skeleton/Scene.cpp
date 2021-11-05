@@ -3,6 +3,7 @@
 #include "WindGenerator.h"
 #include "ParticleDrag.h"
 #include "ExplosionForce.h"
+#include "ParticleSpring.h"
 
 Scene::Scene(Vector3 p)
 {
@@ -17,12 +18,16 @@ Scene::Scene(Vector3 p)
 	ParticleDrag* drag = new ParticleDrag(0.5, 0.1);
 	WindGenerator* w = new WindGenerator(Vector3(-0.5, 0, -0.5), Vector3(-50, 50, -150), 70);
 	ExplosionForce* explosion = new ExplosionForce(Vector3(-50,0, 50), 50);
+	ParticleSpring* muelle = new ParticleSpring(Vector3(-50, 50, 50), Vector4(1, 1, 1, 1), 6, 10);
+
 
 	mForces_[(int)FORCES::EARTH_GRAVITY] = earth_gravity;
 	mForces_[(int)FORCES::LUNAR_GRAVITY] = lunar_gravity;
 	mForces_[(int)FORCES::DRAGGING] = drag;
 	mForces_[(int)FORCES::WIND] = w;
 	mForces_[(int)FORCES::EXPLOSION] = explosion;
+	mForces_[(int)FORCES::SPRING] = muelle;
+	
 
 	//
 }
@@ -52,7 +57,7 @@ void Scene::run(double t)
 		int rX = 1 + rand() % 20;
 		int rY = 0 + rand() % 20;
 		int rZ = 1 + rand() % 20;
-		addParticle(FORCES::WIND, Vector3(50, 50, 50), Vector3(-10, 0, -30) - Vector3(rX, -rY / 2, rZ), Vector4(0, 1, 0.5, 1));
+		addParticle(FORCES::WIND, Vector3(50, 50, -50), Vector3(-10, 0, -30) - Vector3(rX, -rY / 2, rZ), Vector4(0, 1, 0.5, 1));
 	}
 }
 
@@ -64,7 +69,11 @@ void Scene::addFireWork(Type t, Vector3 pos, Vector4 color)
 
 void Scene::addParticle(FORCES f, Vector3 pos, Vector3 vel, Vector4 color)
 {
-	Particle* p = new Particle(pos, vel, Vector3(0,0,0), 0.9, 1,1, color, 10);
+	Particle* p = new Particle(pos, vel, Vector3(0,0,0), 0.79, 1,1, color, 10);
+	if (f == FORCES::SPRING) {
+		p->setBoxBody();
+		registry->add(p, mForces_[FORCES::EARTH_GRAVITY]);
+	}
 	registry->add(p, mForces_[(int)f]);
 }
 

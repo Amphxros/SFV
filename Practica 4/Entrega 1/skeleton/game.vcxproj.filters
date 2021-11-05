@@ -21,6 +21,7 @@
     <ClCompile Include="ParticleDrag.cpp" />
     <ClCompile Include="ExplosionForce.cpp" />
     <ClCompile Include="ParticleSpring.cpp" />
+    <ClCompile Include="ParticleAnchoredSpring.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core.hpp" />
@@ -43,6 +44,7 @@
     <ClInclude Include="ParticleDrag.h" />
     <ClInclude Include="ExplosionForce.h" />
     <ClInclude Include="ParticleSpring.h" />
+    <ClInclude Include="ParticleAnchoredSpring.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">

@@ -31,7 +31,7 @@ void Particle::integrate(double t)
 		*mTransform_ = physx::PxTransform(mPos_);
 
 		mSpeed_ += mAccel_ * t;
-		mAccel_ = mForce_* (1/mMass_); // ley de newton a=f/m -> a=f* 1/m 
+		mAccel_ =  mForce_* (1/mMass_); // ley de newton a=f/m -> a=f* 1/m 
 		mSpeed_ *= powf(mDamp_, t);
 	}
 
