@@ -17,7 +17,7 @@
 using namespace physx;
 
 
-enum FORCES {EARTH_GRAVITY, LUNAR_GRAVITY, DRAGGING, WIND, EXPLOSION,SPRING,NUM_FORCES};
+enum FORCES {EARTH_GRAVITY, LUNAR_GRAVITY, DRAGGING, WIND, EXPLOSION,SPRING_A,SPRING_B,NUM_FORCES};
 
 class Scene
 {
@@ -30,7 +30,7 @@ public:
 	void addFireWork(Type t, Vector3 pos, Vector4 color);
 
 	void addParticle(FORCES f, Vector3 pos, Vector3 vel,Vector4 color);
-
+	void addSpring();
 
 private:	
 	ParticleManager* mManager_;

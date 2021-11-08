@@ -142,7 +142,12 @@ void keyPress(unsigned char key, const PxTransform& camera)
 		mScene->addFireWork(Type::ASPERSOR, GetCamera()->getEye()- Vector3(50, 50, 100), Vector4(0.3, 0.3, 0.7, 1));
 		break;
 	case 'V':
-		mScene->addParticle(FORCES::SPRING, Vector3(-50, 0, 0), Vector3(0, 0, 0), Vector4(1, 1, 1, 1));
+		mScene->addSpring();
+		break;
+	
+	case 'N':
+		mScene->addParticle(FORCES::SPRING_A, Vector3(-50, 0, 50) + Vector3(0, -10, -10), Vector3(0, 0, 0), Vector4(0.2, 0.8, 0.8, 1));
+
 		break;
 
 	default:

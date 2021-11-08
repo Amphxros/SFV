@@ -4,6 +4,7 @@
 #include "ParticleDrag.h"
 #include "ExplosionForce.h"
 #include "ParticleSpring.h"
+#include "ParticleAnchoredSpring.h"
 
 Scene::Scene(Vector3 p)
 {
@@ -18,16 +19,14 @@ Scene::Scene(Vector3 p)
 	ParticleDrag* drag = new ParticleDrag(0.5, 0.1);
 	WindGenerator* w = new WindGenerator(Vector3(-0.5, 0, -0.5), Vector3(-50, 50, -150), 70);
 	ExplosionForce* explosion = new ExplosionForce(Vector3(-50,0, 50), 50);
-	ParticleSpring* muelle = new ParticleSpring(Vector3(-50, 50, 50), Vector4(1, 1, 1, 1), 6, 10);
-
+	ParticleAnchoredSpring* anchor = new ParticleAnchoredSpring(Vector3(0, 20, 0), 0.1, 1);
 
 	mForces_[(int)FORCES::EARTH_GRAVITY] = earth_gravity;
 	mForces_[(int)FORCES::LUNAR_GRAVITY] = lunar_gravity;
 	mForces_[(int)FORCES::DRAGGING] = drag;
 	mForces_[(int)FORCES::WIND] = w;
 	mForces_[(int)FORCES::EXPLOSION] = explosion;
-	mForces_[(int)FORCES::SPRING] = muelle;
-	
+	mForces_[(int)FORCES::SPRING_A] = anchor;
 
 	//
 }
@@ -69,11 +68,25 @@ void Scene::addFireWork(Type t, Vector3 pos, Vector4 color)
 
 void Scene::addParticle(FORCES f, Vector3 pos, Vector3 vel, Vector4 color)
 {
-	Particle* p = new Particle(pos, vel, Vector3(0,0,0), 0.79, 1,1, color, 10);
-	if (f == FORCES::SPRING) {
-		p->setBoxBody();
-		registry->add(p, mForces_[FORCES::EARTH_GRAVITY]);
-	}
+	Particle* p = new Particle(pos, vel, Vector3(0,0,0), 0.79, 1,1, color, 100);
 	registry->add(p, mForces_[(int)f]);
+	if (f == FORCES::SPRING_A) {
+		registry->add(p, mForces_[(int)FORCES::EARTH_GRAVITY]);
+	}
+}
+
+void Scene::addSpring()
+{
+	Particle* pA = new Particle(Vector3(20,-10,0), Vector3(0,0,0), Vector3(0, 0, 0), 0.79, 1, 1, Vector4(1,1,1,1), 999);
+	ParticleSpring* muelleA = new ParticleSpring(pA, 0.05, 25);
+
+	Particle* pB = new Particle(Vector3(10, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), 0.79, 1, 1, Vector4(1, 1, 1, 1), 999);
+	ParticleSpring* muelleB = new ParticleSpring(pB, 0.05, 25);
+
+	registry->add(pA, muelleB);  
+	registry->add(pB, muelleA);
+
+	registry->add(pA, mForces_[(int)FORCES::LUNAR_GRAVITY]);
+	//registry->add(pB, mForces_[(int)FORCES::EARTH_GRAVITY]);
 }
 
