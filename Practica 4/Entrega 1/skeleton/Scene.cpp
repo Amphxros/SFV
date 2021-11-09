@@ -77,11 +77,11 @@ void Scene::addParticle(FORCES f, Vector3 pos, Vector3 vel, Vector4 color)
 
 void Scene::addSpring()
 {
-	Particle* pA = new Particle(Vector3(20,-10,0), Vector3(0,0,0), Vector3(0, 0, 0), 0.79, 1, 1, Vector4(1,1,1,1), 999);
-	ParticleSpring* muelleA = new ParticleSpring(pA, 0.05, 25);
+	Particle* pA = new Particle(Vector3(10,-10,0), Vector3(0,0,0), Vector3(0, 0, 0), 0.79, 1, 1, Vector4(1,1,1,1), 999);
+	ParticleSpring* muelleA = new ParticleSpring(pA, 0.01, 9.75);
 
 	Particle* pB = new Particle(Vector3(10, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), 0.79, 1, 1, Vector4(1, 1, 1, 1), 999);
-	ParticleSpring* muelleB = new ParticleSpring(pB, 0.05, 25);
+	ParticleSpring* muelleB = new ParticleSpring(pB, 0.01, 9.75);
 
 	registry->add(pA, muelleB);  
 	registry->add(pB, muelleA);

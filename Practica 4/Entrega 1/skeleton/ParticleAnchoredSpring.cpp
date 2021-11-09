@@ -1,7 +1,7 @@
 #include "ParticleAnchoredSpring.h"
 
 ParticleAnchoredSpring::ParticleAnchoredSpring(Vector3 anchor, float k, float restLength): 
-	mAnchor_(anchor),mK_(k), mRestLength_(restLength)
+	ParticleForceGenerator(), mAnchor_(anchor),mK_(k), mRestLength_(restLength)
 {
 
 }
@@ -12,10 +12,10 @@ ParticleAnchoredSpring::~ParticleAnchoredSpring()
 
 void ParticleAnchoredSpring::integrateForce(Particle* p, float t)
 {
-	Vector3 pos = p->getPosition();
-	pos -= mAnchor_;
-	float length = pos.normalize();
+	Vector3 f = p->getPosition();
+	f -= mAnchor_;
+	float length = f.normalize();
 	
-	pos *= -(length - mRestLength_) * mK_;
-	p->addForce(pos);
+	f *= -(length - mRestLength_) * mK_;
+	p->addForce(f);
 }
