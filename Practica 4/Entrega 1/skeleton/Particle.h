@@ -38,7 +38,8 @@ public:
 
 	inline bool hasInfiniteMass() { return (1 / mMass_) <= 0; }
 
-	void setBoxBody() { mBody_ = new RenderItem(CreateShape(physx::PxBoxGeometry(mRadius_,mRadius_,mRadius_)), mTransform_, mColor_);}
+	void setBoxBody() { mBody_ = new RenderItem(CreateShape(physx::PxBoxGeometry(mRadius_, mRadius_, mRadius_)), mTransform_, mColor_); }
+	void setBoxBody(float x, float y, float z) { mBody_ = new RenderItem(CreateShape(physx::PxBoxGeometry(x,y,z)), mTransform_, mColor_);}
 
 protected:
 	//components for the physics of the particle

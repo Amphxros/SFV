@@ -5,7 +5,7 @@
 #include "ExplosionForce.h"
 #include "ParticleSpring.h"
 #include "ParticleAnchoredSpring.h"
-
+#include "ParticleBungee.h"
 Scene::Scene(Vector3 p)
 {
 	registry = new ParticleForceRegistry();
