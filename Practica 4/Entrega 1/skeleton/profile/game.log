@@ -1,7 +1,0 @@
-﻿  Scene.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 4\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
-           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 4\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 4\Entrega 1\skeleton\ParticleForceGenerator.h(10,3): warning C4265: "ParticleForceGenerator": la clase tiene funciones virtuales, pero su destructor no trivial no es virtual; puede que las instancias de esta clase no se destruyan correctamente
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 4\Entrega 1\skeleton\Scene.cpp(9,22): warning C4100: 'p': parámetro formal sin referencia
-  game.vcxproj -> C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 4\Entrega 1\bin\gamePROFILE.exe

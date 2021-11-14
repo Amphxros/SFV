@@ -1,0 +1,16 @@
+﻿  Firework.cpp
+  main.cpp
+  Particle.cpp
+  ParticleForceGenerator.cpp
+  ParticleForceRegistry.cpp
+  ParticleGravity.cpp
+  ParticleManager.cpp
+  Scene.cpp
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\main.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\ParticleForceGenerator.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\Firework.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\ParticleGravity.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\ParticleForceRegistry.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\Scene.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\Particle.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\ParticleManager.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
