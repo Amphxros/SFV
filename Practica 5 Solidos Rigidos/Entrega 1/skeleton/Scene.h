@@ -16,14 +16,14 @@
 #include "ParticleForceRegistry.h"
 #include <list>
 using namespace physx;
-
-
+  
 enum FORCES {EARTH_GRAVITY, LUNAR_GRAVITY, DRAGGING, WIND, EXPLOSION, BUOYANCY, BUNGEE,SPRING_A,NUM_FORCES};
 
 class Scene
 {
 public: 
 	Scene(Vector3 p);
+	Scene(PxPhysics* physics, PxScene* scene);
 	~Scene();
 
 	void run(double t);
@@ -37,11 +37,17 @@ public:
 	void addK();
 	void sustrateK();
 
+
 private:	
 	ParticleManager* mManager_;
 	std::vector<Firework*> mFireWorks_;
 	std::vector<ParticleForceGenerator*> mForces_;
 	ParticleSpring* muelle;
 	ParticleForceRegistry* registry;
+
+	PxPhysics* mPhysics_;
+	PxScene* mScene_;
+	PxMaterial* mMaterial_;
+	ContactReportCallback gContactReportCallback;
 };
 

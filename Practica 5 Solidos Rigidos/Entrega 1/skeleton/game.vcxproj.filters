@@ -24,6 +24,7 @@
     <ClCompile Include="ParticleAnchoredSpring.cpp" />
     <ClCompile Include="ParticleBungee.cpp" />
     <ClCompile Include="ParticleBuoyancy.cpp" />
+    <ClCompile Include="BodySystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core.hpp" />
@@ -49,6 +50,7 @@
     <ClInclude Include="ParticleAnchoredSpring.h" />
     <ClInclude Include="ParticleBungee.h" />
     <ClInclude Include="ParticleBuoyancy.h" />
+    <ClInclude Include="BodySystem.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">

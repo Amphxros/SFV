@@ -1,7 +1,6 @@
 #pragma once
 #include "ParticleForceGenerator.h"
 
-const bool DEBUG = true;
 class WindGenerator :
     public ParticleForceGenerator
 {
