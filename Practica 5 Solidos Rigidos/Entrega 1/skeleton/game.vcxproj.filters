@@ -25,6 +25,8 @@
     <ClCompile Include="ParticleBungee.cpp" />
     <ClCompile Include="ParticleBuoyancy.cpp" />
     <ClCompile Include="BodySystem.cpp" />
+    <ClCompile Include="Rigidbody.cpp" />
+    <ClCompile Include="StaticRigidbdy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core.hpp" />
@@ -51,6 +53,8 @@
     <ClInclude Include="ParticleBungee.h" />
     <ClInclude Include="ParticleBuoyancy.h" />
     <ClInclude Include="BodySystem.h" />
+    <ClInclude Include="Rigidbody.h" />
+    <ClInclude Include="StaticRigidbdy.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">

@@ -14,8 +14,6 @@ public:
 
 
 private:
-	std::vector<physx::PxRigidStatic*> mStatics_;
-	std::vector<physx::PxRigidDynamic*> mDynamics_;
 	float time;
 	float timeToSpawn_;
 };
