@@ -7,7 +7,7 @@ struct ParticleForcePair {		// equivalente a std::pair<particle, force>
 	Particle* particle;
 	ParticleForceGenerator* force;
 };
-using Registry =std::vector<ParticleForcePair>; //equialente a typedef ...
+using ParticleRegistry =std::vector<ParticleForcePair>; //equialente a typedef ...
 
 class ParticleForceRegistry
 {
@@ -21,6 +21,6 @@ public:
 	void clear();
 	void integrateForces(float t);
 protected:
-	Registry mRegistry_;
+	ParticleRegistry mRegistry_;
 };
 

@@ -27,6 +27,8 @@
     <ClCompile Include="BodySystem.cpp" />
     <ClCompile Include="Rigidbody.cpp" />
     <ClCompile Include="StaticRigidbdy.cpp" />
+    <ClCompile Include="RigidbodyForceGenerator.cpp" />
+    <ClCompile Include="RigidbodyForceRegistry.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core.hpp" />
@@ -55,6 +57,8 @@
     <ClInclude Include="BodySystem.h" />
     <ClInclude Include="Rigidbody.h" />
     <ClInclude Include="StaticRigidbdy.h" />
+    <ClInclude Include="RigidbodyForceGenerator.h" />
+    <ClInclude Include="RigidbodyForceRegistry.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">
