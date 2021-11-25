@@ -11,10 +11,10 @@
 
 Scene::Scene(Vector3 p)
 {
-	registry = new ParticleForceRegistry();
+	particleregistry = new ParticleForceRegistry();
 	
 	mFireWorks_.reserve(1000);
-	mForces_.reserve(FORCES::NUM_FORCES);
+	mForces_ = std::vector<ParticleForceGenerator*>((int)PARTICLE_FORCES::NUM_FORCES);
 
 	//fuerzas
 	ParticleGravity* earth_gravity = new ParticleGravity(Vector3(0, -9.81, 0));		//100 veces menos ya que de lo contrario no se llega ni a percibir las particulas afectadas
@@ -23,16 +23,16 @@ Scene::Scene(Vector3 p)
 	WindGenerator* w = new WindGenerator(Vector3(-0.05, 0, 0), Vector3(0, 0, 0), 10);
 	ExplosionForce* explosion = new ExplosionForce(Vector3(0, 0, 0), 1);
 	ParticleAnchoredSpring* anchor = new ParticleAnchoredSpring(Vector3(0, 20, 0), 0.1, 1);
-	ParticleBuoyancy* buoya = new ParticleBuoyancy(10,80,0.1);
+	ParticleBuoyancy* buoya = new ParticleBuoyancy(10,80,1000);
 
 
-	mForces_[(int)FORCES::EARTH_GRAVITY] = earth_gravity;
-	mForces_[(int)FORCES::LUNAR_GRAVITY] = lunar_gravity;
-	mForces_[(int)FORCES::DRAGGING] = drag;
-	mForces_[(int)FORCES::WIND] = w;
-	mForces_[(int)FORCES::EXPLOSION] = explosion;
-	mForces_[(int)FORCES::SPRING_A] = anchor;
-	mForces_[(int)FORCES::BUOYANCY] = buoya;
+	mForces_[(int)PARTICLE_FORCES::EARTH_GRAVITY] = earth_gravity;
+	mForces_[(int)PARTICLE_FORCES::LUNAR_GRAVITY] = lunar_gravity;
+	mForces_[(int)PARTICLE_FORCES::DRAGGING] = drag;
+	mForces_[(int)PARTICLE_FORCES::WIND] = w;
+	mForces_[(int)PARTICLE_FORCES::EXPLOSION] = explosion;
+	mForces_[(int)PARTICLE_FORCES::SPRING_A] = anchor;
+	mForces_[(int)PARTICLE_FORCES::BUOYANCY] = buoya;
 
 	addSpring();
 	//
@@ -57,7 +57,7 @@ Scene::Scene(PxPhysics* physics, PxScene* scene):
 
 Scene::~Scene()
 {
-	delete registry;
+	delete particleregistry;
 
 	for (auto f : mForces_)
 		delete f;
@@ -68,7 +68,7 @@ Scene::~Scene()
 
 void Scene::run(double t)
 {
-	registry->integrateForces(t);
+	particleregistry->integrateForces(t);
 	
 	for (auto it = mFireWorks_.begin(); it != mFireWorks_.end(); ++it) {
 		Firework* f = *it;
@@ -82,12 +82,12 @@ void Scene::addFireWork(Type t, Vector3 pos, Vector4 color)
 	mFireWorks_.push_back(f);
 }
 
-void Scene::addParticle(FORCES f, Vector3 pos, Vector3 vel, Vector4 color)
+void Scene::addParticle(PARTICLE_FORCES f, Vector3 pos, Vector3 vel, Vector4 color)
 {
 	Particle* p = new Particle(pos, vel, Vector3(0,0,0), 0.0009, 1,1, color, 100);
-	registry->add(p, mForces_[(int)f]);
-	registry->add(p, mForces_[(int)FORCES::BUOYANCY]);
-	registry->add(p, mForces_[(int)FORCES::EARTH_GRAVITY]);
+	particleregistry->add(p, mForces_[(int)f]);
+	particleregistry->add(p, mForces_[(int)PARTICLE_FORCES::BUOYANCY]);
+	particleregistry->add(p, mForces_[(int)PARTICLE_FORCES::EARTH_GRAVITY]);
 }
 
 void Scene::addSpring()
@@ -100,19 +100,19 @@ void Scene::addSpring()
 	Particle* pB = new Particle(Vector3(5, -10, 40), Vector3(rx, ry, rz), Vector3(0, 0, 0), 0.07, 10, 4, Vector4(1, 0, 1, 1), 999);
 
 	muelle = new ParticleSpring(pA, 2,3.5);
-	mForces_[(int)FORCES::SPRING_A] = muelle;
-	registry->add(pA, muelle);
-	registry->add(pB, muelle);
+	mForces_[(int)PARTICLE_FORCES::SPRING_A] = muelle;
+	particleregistry->add(pA, muelle);
+	particleregistry->add(pB, muelle);
 
-	registry->add(pB, mForces_[FORCES::EARTH_GRAVITY]);
+	particleregistry->add(pB, mForces_[PARTICLE_FORCES::EARTH_GRAVITY]);
 		
 }
 
 void Scene::addBuoyancyParticle(Vector3 pos, Vector3 speed, Vector4 color, float rd, float mass)
 {
 	Particle* p = new Particle(pos, speed, Vector3(0, 0.5, 0), 0.79, 1, 1, color, 100);
-	registry->add(p, mForces_[(int)FORCES::BUOYANCY]);
-	registry->add(p, mForces_[(int)FORCES::EARTH_GRAVITY]);
+	particleregistry->add(p, mForces_[(int)PARTICLE_FORCES::BUOYANCY]);
+	particleregistry->add(p, mForces_[(int)PARTICLE_FORCES::EARTH_GRAVITY]);
 
 }
 

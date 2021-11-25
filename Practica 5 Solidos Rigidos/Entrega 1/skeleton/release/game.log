@@ -1,16 +1,48 @@
-﻿  Firework.cpp
+﻿  BodySystem.cpp
+  callbacks.cpp
+  ExplosionForce.cpp
+  Firework.cpp
   main.cpp
   Particle.cpp
+  ParticleAnchoredSpring.cpp
+  ParticleBungee.cpp
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\callbacks.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\ExplosionForce.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\main.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\BodySystem.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\ParticleBungee.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\Firework.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\Particle.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\ParticleAnchoredSpring.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+  ParticleBuoyancy.cpp
+  ParticleDrag.cpp
   ParticleForceGenerator.cpp
   ParticleForceRegistry.cpp
   ParticleGravity.cpp
   ParticleManager.cpp
+  ParticleSpring.cpp
+  RenderUtils.cpp
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\ParticleForceRegistry.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\ParticleGravity.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\ParticleManager.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\ParticleBuoyancy.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\ParticleSpring.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\ParticleForceGenerator.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+  Camera.cpp
+  Render.cpp
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\ParticleDrag.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+  Rigidbody.cpp
+  RigidbodyForceGenerator.cpp
+  RigidbodyForceRegistry.cpp
   Scene.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\main.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\ParticleForceGenerator.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\Firework.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\ParticleGravity.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\ParticleForceRegistry.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\Scene.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\Particle.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\ParticleManager.cpp : fatal error C1041: no puede abrir la base de datos de programa 'C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\RenderUtils.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\Render\Render.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\Render\Camera.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\Rigidbody.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\Scene.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\RigidbodyForceGenerator.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\RigidbodyForceRegistry.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+  StaticRigidbdy.cpp
+  WindGenerator.cpp
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\WindGenerator.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\StaticRigidbdy.cpp : fatal error C1041: no puede abrir la base de datos de programa 'U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\game.pdb'. Si varios CL.EXE escriben en el mismo archivo .PDB, use /FS.

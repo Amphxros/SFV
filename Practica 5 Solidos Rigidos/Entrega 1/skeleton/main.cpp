@@ -10,6 +10,7 @@
 #include "Particle.h"
 #include "Scene.h"
 
+
 using namespace physx;
 
 PxDefaultAllocator		gAllocator;
@@ -101,8 +102,8 @@ void keyPress(unsigned char key, const PxTransform& camera)
 	
 	case 'H':	//dos particulas a la vez para que se vea que evidentemente tienen diferente gravedad
 	{
-		mScene->addParticle(FORCES::LUNAR_GRAVITY, GetCamera()->getEye() - Vector3(150, -150, 150), Vector3(0, 10, 0), Vector4(0.2, 0.9, 0.9, 1));
-		mScene->addParticle(FORCES::EARTH_GRAVITY, GetCamera()->getEye() - Vector3(150, -150, 100), Vector3(0, 10, 0), Vector4(0.9, 0.4, 0.9, 1));
+		mScene->addParticle(PARTICLE_FORCES::LUNAR_GRAVITY, GetCamera()->getEye() - Vector3(150, -150, 150), Vector3(0, 10, 0), Vector4(0.2, 0.9, 0.9, 1));
+		mScene->addParticle(PARTICLE_FORCES::EARTH_GRAVITY, GetCamera()->getEye() - Vector3(150, -150, 100), Vector3(0, 10, 0), Vector4(0.9, 0.4, 0.9, 1));
 		break;
 	}
 	case 'E': //explosive bouyancy
@@ -111,14 +112,14 @@ void keyPress(unsigned char key, const PxTransform& camera)
 		int ry = 0 + rand() % 120;
 		int rz = 1+rand() % 120;
 		
-		mScene->addParticle(FORCES::EXPLOSION, Vector3(rx, ry, rz), Vector3(0, 0, 0), Vector4(rx % 121, ry / 120, rz / 121, 12));
-		mScene->addParticle(FORCES::EXPLOSION, Vector3(rx, ry, -rz), Vector3(0, 0, 0), Vector4(rx / 121, ry / 120, rz / 121, 12));
-		mScene->addParticle(FORCES::EXPLOSION, Vector3(rx, -ry, rz), Vector3(0, 0, 0), Vector4(rx  %121, ry % 120, rz / 121, 12));
-		mScene->addParticle(FORCES::EXPLOSION, Vector3(rx, -ry, -rz), Vector3(0, 0, 0), Vector4(rx / 121, ry % 120, rz % 121, 12));
-		mScene->addParticle(FORCES::EXPLOSION, Vector3(-rx, ry, rz), Vector3(0, 0, 0), Vector4(rx % 121, ry / 120, rz % 121, 12));
-		mScene->addParticle(FORCES::EXPLOSION, Vector3(-rx, ry, -rz), Vector3(0, 0, 0), Vector4(rx / 121, ry % 120, rz % 121, 12));
-		mScene->addParticle(FORCES::EXPLOSION, Vector3(-rx, -ry, rz), Vector3(0, 0, 0), Vector4(rx % 121, ry % 120, rz % 121, 12));
-		mScene->addParticle(FORCES::EXPLOSION, Vector3(-rx, -ry, -rz), Vector3(0, 0, 0), Vector4(rx/121, ry/120, rz/121, 12));
+		mScene->addParticle(PARTICLE_FORCES::EXPLOSION, Vector3(rx, ry, rz), Vector3(0, 0, 0), Vector4(rx % 121, ry / 120, rz / 121, 12));
+		mScene->addParticle(PARTICLE_FORCES::EXPLOSION, Vector3(rx, ry, -rz), Vector3(0, 0, 0), Vector4(rx / 121, ry / 120, rz / 121, 12));
+		mScene->addParticle(PARTICLE_FORCES::EXPLOSION, Vector3(rx, -ry, rz), Vector3(0, 0, 0), Vector4(rx  %121, ry % 120, rz / 121, 12));
+		mScene->addParticle(PARTICLE_FORCES::EXPLOSION, Vector3(rx, -ry, -rz), Vector3(0, 0, 0), Vector4(rx / 121, ry % 120, rz % 121, 12));
+		mScene->addParticle(PARTICLE_FORCES::EXPLOSION, Vector3(-rx, ry, rz), Vector3(0, 0, 0), Vector4(rx % 121, ry / 120, rz % 121, 12));
+		mScene->addParticle(PARTICLE_FORCES::EXPLOSION, Vector3(-rx, ry, -rz), Vector3(0, 0, 0), Vector4(rx / 121, ry % 120, rz % 121, 12));
+		mScene->addParticle(PARTICLE_FORCES::EXPLOSION, Vector3(-rx, -ry, rz), Vector3(0, 0, 0), Vector4(rx % 121, ry % 120, rz % 121, 12));
+		mScene->addParticle(PARTICLE_FORCES::EXPLOSION, Vector3(-rx, -ry, -rz), Vector3(0, 0, 0), Vector4(rx/121, ry/120, rz/121, 12));
 	}		
 		break;
 	case ' ':
@@ -147,7 +148,7 @@ void keyPress(unsigned char key, const PxTransform& camera)
 
 	
 	case 'N':
-		mScene->addParticle(FORCES::SPRING_A, Vector3(-50, 0, 50) + Vector3(0, -10, -10), Vector3(0, 0, 0), Vector4(0.2, 0.8, 0.8, 1));
+		mScene->addParticle(PARTICLE_FORCES::SPRING_A, Vector3(-50, 0, 50) + Vector3(0, -10, -10), Vector3(0, 0, 0), Vector4(0.2, 0.8, 0.8, 1));
 
 		break;
 

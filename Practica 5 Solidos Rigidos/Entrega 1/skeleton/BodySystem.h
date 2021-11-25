@@ -2,6 +2,8 @@
 #include <vector>
 #include <PxPhysicsAPI.h>
 #include "RenderUtils.hpp"
+#include "RenderUtils.hpp"
+#include "core.hpp"
 class BodySystem
 {
 public:
@@ -16,5 +18,7 @@ public:
 private:
 	float time;
 	float timeToSpawn_;
+
+	std::vector<RigidBody*> mRigidBodys_;
 };
 

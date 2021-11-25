@@ -1,19 +1,33 @@
-c:\users\ampac\documents\git_repositorios\ucm_repos\sfv\practica 2\entrega 2\skeleton\debug\main.obj
-c:\users\ampac\documents\git_repositorios\ucm_repos\sfv\practica 2\entrega 2\skeleton\debug\particle.obj
-c:\users\ampac\documents\git_repositorios\ucm_repos\sfv\practica 2\entrega 2\skeleton\debug\callbacks.obj
-c:\users\ampac\documents\git_repositorios\ucm_repos\sfv\practica 2\entrega 2\skeleton\debug\renderutils.obj
-c:\users\ampac\documents\git_repositorios\ucm_repos\sfv\practica 2\entrega 2\skeleton\debug\camera.obj
-c:\users\ampac\documents\git_repositorios\ucm_repos\sfv\practica 2\entrega 2\skeleton\debug\scene.obj
-c:\users\ampac\documents\git_repositorios\ucm_repos\sfv\practica 2\entrega 2\skeleton\debug\particlemanager.obj
-c:\users\ampac\documents\git_repositorios\ucm_repos\sfv\practica 2\entrega 2\skeleton\debug\firework.obj
-c:\users\ampac\documents\git_repositorios\ucm_repos\sfv\practica 2\entrega 2\skeleton\debug\render.obj
-c:\users\ampac\documents\git_repositorios\ucm_repos\sfv\practica 2\entrega 2\bin\gamedebug.pdb
-c:\users\ampac\documents\git_repositorios\ucm_repos\sfv\practica 2\entrega 2\bin\gamedebug.exe
-c:\users\ampac\documents\git_repositorios\ucm_repos\sfv\practica 2\entrega 2\bin\gamedebug.ilk
-c:\users\ampac\documents\git_repositorios\ucm_repos\sfv\practica 2\entrega 2\skeleton\debug\game.tlog\cl.command.1.tlog
-c:\users\ampac\documents\git_repositorios\ucm_repos\sfv\practica 2\entrega 2\skeleton\debug\game.tlog\cl.read.1.tlog
-c:\users\ampac\documents\git_repositorios\ucm_repos\sfv\practica 2\entrega 2\skeleton\debug\game.tlog\cl.write.1.tlog
-c:\users\ampac\documents\git_repositorios\ucm_repos\sfv\practica 2\entrega 2\skeleton\debug\game.tlog\link.command.1.tlog
-c:\users\ampac\documents\git_repositorios\ucm_repos\sfv\practica 2\entrega 2\skeleton\debug\game.tlog\link.delete.1.tlog
-c:\users\ampac\documents\git_repositorios\ucm_repos\sfv\practica 2\entrega 2\skeleton\debug\game.tlog\link.read.1.tlog
-c:\users\ampac\documents\git_repositorios\ucm_repos\sfv\practica 2\entrega 2\skeleton\debug\game.tlog\link.write.1.tlog
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\firework.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\renderutils.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\scene.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\explosionforce.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\particlespring.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\rigidbodyforcegenerator.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\main.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\particlegravity.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\rigidbodyforceregistry.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\callbacks.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\particlebuoyancy.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\camera.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\staticrigidbdy.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\bodysystem.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\particledrag.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\rigidbody.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\particlebungee.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\particlemanager.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\particleanchoredspring.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\particleforceregistry.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\windgenerator.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\particle.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\particleforcegenerator.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\render.obj
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\bin\gamedebug.pdb
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\bin\gamedebug.exe
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\bin\gamedebug.ilk
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\game.tlog\cl.command.1.tlog
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\game.tlog\cl.read.1.tlog
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\game.tlog\cl.write.1.tlog
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\game.tlog\link.command.1.tlog
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\game.tlog\link.read.1.tlog
+u:\ucm_repos\sfv\practica 5 solidos rigidos\entrega 1\skeleton\debug\game.tlog\link.write.1.tlog

@@ -1,8 +1,22 @@
-﻿  Particle.cpp
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
-           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount'
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\Particle.cpp(7,45): warning C5038: miembro de datos "Particle::mDamp_" se inicializará después de miembro de datos "Particle::mForce_"
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\Particle.cpp(7,97): warning C5038: miembro de datos "Particle::mRadius_" se inicializará después de miembro de datos "Particle::mColor_"
-C:\Users\ampac\Documents\git_Repositorios\UCM_Repos\SFV\Practica 3\Entrega 1\skeleton\Particle.cpp(7,111): warning C5038: miembro de datos "Particle::mColor_" se inicializará después de miembro de datos "Particle::age_"
-LINK : fatal error LNK1168: no se puede abrir ..\bin\gameDEBUG.exe para escritura
+﻿  main.cpp
+  ParticleBuoyancy.cpp
+  Scene.cpp
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
+           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen main.cpp)
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen main.cpp)
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
+           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen ParticleBuoyancy.cpp)
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen ParticleBuoyancy.cpp)
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
+           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen Scene.cpp)
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen Scene.cpp)
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\ParticleForceGenerator.h(10,3): warning C4265: "ParticleForceGenerator": la clase tiene funciones virtuales, pero su destructor no trivial no es virtual; puede que las instancias de esta clase no se destruyan correctamente (compilando archivo de origen main.cpp)
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\ParticleForceGenerator.h(10,3): warning C4265: "ParticleForceGenerator": la clase tiene funciones virtuales, pero su destructor no trivial no es virtual; puede que las instancias de esta clase no se destruyan correctamente (compilando archivo de origen Scene.cpp)
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\RigidbodyForceGenerator.h(10,1): warning C5204: "RigidbodyForceGenerator": la clase tiene funciones virtuales, pero su destructor trivial no es virtual; puede que las instancias de objetos derivados de esta clase no se destruyan correctamente (compilando archivo de origen main.cpp)
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\RigidbodyForceGenerator.h(10,1): warning C5204: "RigidbodyForceGenerator": la clase tiene funciones virtuales, pero su destructor trivial no es virtual; puede que las instancias de objetos derivados de esta clase no se destruyan correctamente (compilando archivo de origen Scene.cpp)
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\ParticleForceGenerator.h(10,3): warning C4265: "ParticleForceGenerator": la clase tiene funciones virtuales, pero su destructor no trivial no es virtual; puede que las instancias de esta clase no se destruyan correctamente (compilando archivo de origen ParticleBuoyancy.cpp)
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\ParticleBuoyancy.cpp(18,58): warning C4100: 't': parámetro formal sin referencia
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\Scene.cpp(12,22): warning C4100: 'p': parámetro formal sin referencia
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\Scene.cpp(111,92): warning C4100: 'mass': parámetro formal sin referencia
+U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\Scene.cpp(111,82): warning C4100: 'rd': parámetro formal sin referencia
+  game.vcxproj -> U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\gameDEBUG.exe
