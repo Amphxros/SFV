@@ -38,20 +38,10 @@ Scene::Scene(Vector3 p)
 	//
 }
 
-Scene::Scene(PxPhysics* physics, PxScene* scene): 
-	mPhysics_(physics), mScene_(scene)
+Scene::Scene(PxPhysics* physics): 
+	mPhysics_(physics)
 {
-	// For Solid Rigids +++++++++++++++++++++++++++++++++++++
-	mMaterial_ = mPhysics_->createMaterial(0.5f, 0.5f, 0.6f);
-
-	PxSceneDesc sceneDesc(mPhysics_->getTolerancesScale());
-	sceneDesc.gravity = PxVec3(0.0f, -9.81f, 0.0f); 
-	PxDefaultCpuDispatcher* gDispatcher = gDispatcher = PxDefaultCpuDispatcherCreate(2);
-	sceneDesc.cpuDispatcher = gDispatcher;
-	sceneDesc.filterShader = contactReportFilterShader;
-	sceneDesc.simulationEventCallback = &gContactReportCallback;
-	mScene_ = mPhysics_->createScene(sceneDesc);
-	// ------------------------------------------------------
+	
 
 }
 

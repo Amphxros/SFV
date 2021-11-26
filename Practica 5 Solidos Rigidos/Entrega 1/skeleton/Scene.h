@@ -51,9 +51,7 @@ private:
 	RigidbodyForceRegistry* rigidbodyRegistry_;
 
 	PxPhysics* mPhysics_;
-	PxScene* mScene_;
-	PxMaterial* mMaterial_;
-	ContactReportCallback gContactReportCallback;
+	
 
 	BodySystem* mRigidSystem_;
 };

@@ -4,21 +4,30 @@
 #include "RenderUtils.hpp"
 #include "RenderUtils.hpp"
 #include "core.hpp"
+#include "StaticRigidbdy.h"
+#include "Rigidbody.h"
+#include "callbacks.hpp"
 class BodySystem
 {
 public:
-	BodySystem(float time);
+	BodySystem(physx::PxPhysics* physics,float time);
 
-	void createStatic(physx::PxScene* mScene);
-	void createDynamic(physx::PxScene* mScene);
+	void createStatic(Vector3 pos);
+	void createDynamic(Vector3 pos);
 
 	void run(float t);
 
 
 private:
-	float time;
+	float time_;
 	float timeToSpawn_;
-
+	physx::PxPhysics* mPhysics_;
 	std::vector<RigidBody*> mRigidBodys_;
+	std::vector<StaticRigidbody*> mStaticBodys_;
+
+	physx::PxScene* mScene_;
+	physx::PxMaterial* mMaterial_;
+	ContactReportCallback gContactReportCallback;
+
 };
 
