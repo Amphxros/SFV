@@ -13,7 +13,7 @@ public:
 	BodySystem(physx::PxPhysics* physics,float time);
 
 	void createStatic(Vector3 pos);
-	void createDynamic(Vector3 pos);
+	void createDynamic(Vector3 pos, Vector3 speed);
 
 	void run(float t);
 

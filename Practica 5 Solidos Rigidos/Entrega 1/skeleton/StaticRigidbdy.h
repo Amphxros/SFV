@@ -6,7 +6,7 @@ public:
 	StaticRigidbody(physx::PxRigidStatic* statics, RenderItem* body, float lifeTime);
 	~StaticRigidbody();
 	inline float getLifeTime() { return mLifeTime_; }
-	inline physx::PxRigidStatic* getStatics() { return mStatics_; }
+	inline physx::PxRigidStatic* getStaticBody() { return mStatics_; }
 protected:
 	float mLifeTime_;
 	RenderItem* mBody_;

@@ -21,8 +21,22 @@ BodySystem::BodySystem(physx::PxPhysics* physics, float time):
 
 void BodySystem::createStatic(Vector3 pos)
 {
+	physx::PxTransform tr_ = physx::PxTransform(pos);
+	physx::PxRigidStatic* statics = mPhysics_->createRigidStatic(tr_);
+	RenderItem* mBody_ = new RenderItem(CreateShape(physx::PxSphereGeometry(4)), &tr_, Vector4());
+	StaticRigidbody* body = new StaticRigidbody(statics, mBody_, 0);
+
+	mScene_->addActor(*body->getStaticBody());
 }
 
-void BodySystem::createDynamic(Vector3 pos)
+void BodySystem::createDynamic(Vector3 pos, Vector3 speed)
 {
+	physx::PxTransform tr_ = physx::PxTransform(pos);
+	physx::PxRigidDynamic* dynamics = mPhysics_->createRigidDynamic(tr_);
+	RenderItem* mBody_ = new RenderItem(CreateShape(physx::PxSphereGeometry(4)), &tr_, Vector4());
+	RigidBody* body = new RigidBody(dynamics, mBody_, 0);
+
+	mScene_->addActor(*body->getMyRigidBody());
+	body->getMyRigidBody()->addForce(speed * body->getMyRigidBody()->getMass());
+
 }
