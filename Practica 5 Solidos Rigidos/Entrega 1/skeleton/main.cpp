@@ -10,6 +10,7 @@
 #include "Particle.h"
 #include "Scene.h"
 
+#define OFFLINE_EXECUTION 
 
 using namespace physx;
 
@@ -44,16 +45,8 @@ void initPhysics(bool interactive)
 
 	gMaterial = gPhysics->createMaterial(0.5f, 0.5f, 0.6f);
 
-	// For Solid Rigids +++++++++++++++++++++++++++++++++++++
-	PxSceneDesc sceneDesc(gPhysics->getTolerancesScale());
-	sceneDesc.gravity = PxVec3(0.0f, 0.0f, 0.0f); //No gravity here 
-	gDispatcher = PxDefaultCpuDispatcherCreate(2);
-	sceneDesc.cpuDispatcher = gDispatcher;
-	sceneDesc.filterShader = contactReportFilterShader;
-	sceneDesc.simulationEventCallback = &gContactReportCallback;
-	gScene = gPhysics->createScene(sceneDesc);
-	mScene = new Scene(GetCamera()->getEye() - Vector3(5, 0, 5));
-	// ------------------------------------------------------
+	mScene = new Scene(gPhysics);
+	
 
 	
 }
@@ -68,8 +61,7 @@ void stepPhysics(bool interactive, double t)
 	
 	mScene->run(t);
 
-	gScene->simulate(t);
-	gScene->fetchResults(true);
+	
 }
 
 // Function to clean data
@@ -99,59 +91,10 @@ void keyPress(unsigned char key, const PxTransform& camera)
 
 	switch(toupper(key))
 	{
-	
-	case 'H':	//dos particulas a la vez para que se vea que evidentemente tienen diferente gravedad
-	{
-		mScene->addParticle(PARTICLE_FORCES::LUNAR_GRAVITY, GetCamera()->getEye() - Vector3(150, -150, 150), Vector3(0, 10, 0), Vector4(0.2, 0.9, 0.9, 1));
-		mScene->addParticle(PARTICLE_FORCES::EARTH_GRAVITY, GetCamera()->getEye() - Vector3(150, -150, 100), Vector3(0, 10, 0), Vector4(0.9, 0.4, 0.9, 1));
-		break;
-	}
-	case 'E': //explosive bouyancy
-	{
-		int rx = 1+rand() % 120;
-		int ry = 0 + rand() % 120;
-		int rz = 1+rand() % 120;
-		
-		mScene->addParticle(PARTICLE_FORCES::EXPLOSION, Vector3(rx, ry, rz), Vector3(0, 0, 0), Vector4(rx % 121, ry / 120, rz / 121, 12));
-		mScene->addParticle(PARTICLE_FORCES::EXPLOSION, Vector3(rx, ry, -rz), Vector3(0, 0, 0), Vector4(rx / 121, ry / 120, rz / 121, 12));
-		mScene->addParticle(PARTICLE_FORCES::EXPLOSION, Vector3(rx, -ry, rz), Vector3(0, 0, 0), Vector4(rx  %121, ry % 120, rz / 121, 12));
-		mScene->addParticle(PARTICLE_FORCES::EXPLOSION, Vector3(rx, -ry, -rz), Vector3(0, 0, 0), Vector4(rx / 121, ry % 120, rz % 121, 12));
-		mScene->addParticle(PARTICLE_FORCES::EXPLOSION, Vector3(-rx, ry, rz), Vector3(0, 0, 0), Vector4(rx % 121, ry / 120, rz % 121, 12));
-		mScene->addParticle(PARTICLE_FORCES::EXPLOSION, Vector3(-rx, ry, -rz), Vector3(0, 0, 0), Vector4(rx / 121, ry % 120, rz % 121, 12));
-		mScene->addParticle(PARTICLE_FORCES::EXPLOSION, Vector3(-rx, -ry, rz), Vector3(0, 0, 0), Vector4(rx % 121, ry % 120, rz % 121, 12));
-		mScene->addParticle(PARTICLE_FORCES::EXPLOSION, Vector3(-rx, -ry, -rz), Vector3(0, 0, 0), Vector4(rx/121, ry/120, rz/121, 12));
-	}		
-		break;
 	case ' ':
+		mScene->addRigidBody();
 		break;
-	case 'Z':
-		mScene->addFireWork(Type::SPHERE, GetCamera()->getEye()- Vector3(150,50,100),Vector4(1,0.2,0.7,1));
-		break;
-		
-	case 'X':
-
-		mScene->addFireWork(Type::SPARK, GetCamera()->getEye()- Vector3(100, 50, 100), Vector4(1, 0.5, 0.2, 1));
-		break;
-		
-	case 'C':
-		mScene->addFireWork(Type::ASPERSOR, GetCamera()->getEye()- Vector3(50, 50, 100), Vector4(0.3, 0.3, 0.7, 1));
-		break;
-	case 'V':
-		mScene->addSpring();
-		break;
-	case 'K':
-		mScene->addK();
-		break;
-	case 'L':
-		mScene->sustrateK();
-		break;
-
 	
-	case 'N':
-		mScene->addParticle(PARTICLE_FORCES::SPRING_A, Vector3(-50, 0, 50) + Vector3(0, -10, -10), Vector3(0, 0, 0), Vector4(0.2, 0.8, 0.8, 1));
-
-		break;
-
 	default:
 		break;
 	}
@@ -173,7 +116,7 @@ int main(int, const char*const*)
 	static const PxU32 frameCount = 100;
 	initPhysics(false);
 	for(PxU32 i=0; i<frameCount; i++)
-		stepPhysics(false);
+		stepPhysics(false,i);
 	cleanupPhysics(false);
 #endif
 

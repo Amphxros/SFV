@@ -41,8 +41,17 @@ Scene::Scene(Vector3 p)
 Scene::Scene(PxPhysics* physics): 
 	mPhysics_(physics)
 {
-	
 
+	// For Solid Rigids +++++++++++++++++++++++++++++++++++++
+	PxSceneDesc sceneDesc(mPhysics_->getTolerancesScale());
+	sceneDesc.gravity = PxVec3(0.0f, 0.0f, 0.0f); //No gravity here 
+	gDispatcher = PxDefaultCpuDispatcherCreate(2);
+	sceneDesc.cpuDispatcher = gDispatcher;
+	sceneDesc.filterShader = contactReportFilterShader;
+	sceneDesc.simulationEventCallback = &gContactReportCallback;
+	gScene = mPhysics_->createScene(sceneDesc);
+
+	mRigidSystem_ = new BodySystem(mPhysics_,0.1f);
 }
 
 Scene::~Scene()
@@ -64,6 +73,13 @@ void Scene::run(double t)
 		Firework* f = *it;
 		f->integrate(t);
 	}
+
+
+
+	gScene->simulate(t);
+	gScene->fetchResults(true);
+
+
 }
 
 void Scene::addFireWork(Type t, Vector3 pos, Vector4 color)
@@ -114,5 +130,16 @@ void Scene::addK()
 void Scene::sustrateK()
 {
 	muelle->addK(-1);
+}
+
+void Scene::addRigidBody()
+{
+	if (mRigidSystem_ != nullptr && mPhysics_ != nullptr) {
+		
+		Vector3 pos = Vector3(0, 0, 0); //cambiar esto por random
+		Vector3 speed = Vector3(0, 0, 0);
+		
+		mRigidSystem_->createDynamic(pos, speed);
+	}
 }
 

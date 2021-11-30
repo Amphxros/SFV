@@ -27,7 +27,7 @@ class Scene
 {
 public: 
 	Scene(Vector3 p);
-	Scene(PxPhysics* physics, PxScene* scene);
+	Scene(PxPhysics* physics);
 	~Scene();
 
 	void run(double t);
@@ -42,6 +42,8 @@ public:
 	void sustrateK();
 
 
+	void addRigidBody();
+
 private:	
 	ParticleManager* mManager_;
 	std::vector<Firework*> mFireWorks_;
@@ -52,6 +54,14 @@ private:
 
 	PxPhysics* mPhysics_;
 	
+
+	PxMaterial* gMaterial = NULL;
+
+	PxPvd* gPvd = NULL;
+
+	PxDefaultCpuDispatcher* gDispatcher = NULL;
+	physx::PxScene* gScene;
+	ContactReportCallback gContactReportCallback;
 
 	BodySystem* mRigidSystem_;
 };
