@@ -1,6 +1,8 @@
 #include "Firework.h"
 
-Firework::Payload::Payload(unsigned type, unsigned count, Vector4 color):
+Firework::Payload::Payload(unsigned type, unsigned count, Vector4 
+
+):
 	payloadType_(type), payloadCount_(count), color(color)
 {
 }

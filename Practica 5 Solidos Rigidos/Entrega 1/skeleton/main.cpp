@@ -10,7 +10,7 @@
 #include "Particle.h"
 #include "Scene.h"
 
-#define OFFLINE_EXECUTION 
+//#define OFFLINE_EXECUTION 
 
 using namespace physx;
 
@@ -30,6 +30,8 @@ PxScene*				gScene      = NULL;
 ContactReportCallback gContactReportCallback;
 Scene* mScene;
 
+BodySystem* mSystem_;
+
 // Initialize physics engine
 void initPhysics(bool interactive)
 {
@@ -39,18 +41,26 @@ void initPhysics(bool interactive)
 
 	gPvd = PxCreatePvd(*gFoundation);
 	PxPvdTransport* transport = PxDefaultPvdSocketTransportCreate(PVD_HOST, 5425, 10);
-	gPvd->connect(*transport,PxPvdInstrumentationFlag::eALL);
+	gPvd->connect(*transport, PxPvdInstrumentationFlag::eALL);
 
-	gPhysics = PxCreatePhysics(PX_PHYSICS_VERSION, *gFoundation, PxTolerancesScale(),true,gPvd);
+	gPhysics = PxCreatePhysics(PX_PHYSICS_VERSION, *gFoundation, PxTolerancesScale(), true, gPvd);
 
 	gMaterial = gPhysics->createMaterial(0.5f, 0.5f, 0.6f);
 
-	mScene = new Scene(gPhysics);
-	
+	// For Solid Rigids +++++++++++++++++++++++++++++++++++++
+	PxSceneDesc sceneDesc(gPhysics->getTolerancesScale());
+	sceneDesc.gravity = PxVec3(0.0f, -9.81f, 0.0f); //No gravity here 
+	gDispatcher = PxDefaultCpuDispatcherCreate(2);
+	sceneDesc.cpuDispatcher = gDispatcher;
+	sceneDesc.filterShader = contactReportFilterShader;
+	sceneDesc.simulationEventCallback = &gContactReportCallback;
+	gScene = gPhysics->createScene(sceneDesc);
+
+	mSystem_ = new BodySystem(gPhysics, gScene ,0.1f);
 
 	
 }
-
+ 
 
 // Function to configure what happens in each step of physics
 // interactive: true if the game is rendering, false if it offline
@@ -59,8 +69,10 @@ void stepPhysics(bool interactive, double t)
 {
 	PX_UNUSED(interactive);
 	
-	mScene->run(t);
-
+	
+	//mScene->run(t);
+	gScene->simulate(t);
+	gScene->fetchResults(interactive);
 	
 }
 
@@ -92,7 +104,9 @@ void keyPress(unsigned char key, const PxTransform& camera)
 	switch(toupper(key))
 	{
 	case ' ':
-		mScene->addRigidBody();
+
+		mSystem_->createDynamic(Vector3(0, 200, 0), Vector3(0, 20, 0));
+		//mSystem_->createStaticBox(Vector3(0, 20, 0), Vector4(0, 1, 0,1));
 		break;
 	
 	default:
@@ -113,10 +127,11 @@ int main(int, const char*const*)
 	extern void renderLoop();
 	renderLoop();
 #else
-	static const PxU32 frameCount = 100;
+	static const PxU32 frameCount = 10;
 	initPhysics(false);
-	for(PxU32 i=0; i<frameCount; i++)
-		stepPhysics(false,i);
+	for (PxU32 i = 0; i < frameCount; i++) {
+		stepPhysics(false);
+	}
 	cleanupPhysics(false);
 #endif
 

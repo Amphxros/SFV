@@ -4,7 +4,4 @@ U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\common\PhysX-3.4\PxShared\
 U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount'
 U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\ParticleForceGenerator.h(10,3): warning C4265: "ParticleForceGenerator": la clase tiene funciones virtuales, pero su destructor no trivial no es virtual; puede que las instancias de esta clase no se destruyan correctamente
 U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\RigidbodyForceGenerator.h(11,1): warning C5204: "RigidbodyForceGenerator": la clase tiene funciones virtuales, pero su destructor trivial no es virtual; puede que las instancias de objetos derivados de esta clase no se destruyan correctamente
-U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\main.cpp(119): warning C5045: El compilador insertará la mitigación de Spectre para la carga de memoria si se especificó el modificador /Qspectre
-  U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\main.cpp(118) : nota: el intervalo "i" del índice se comprobó por comparación en esta línea
-  U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\main.cpp(119) : nota: suministra la llamada en esta línea
-  game.vcxproj -> U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\gameDEBUG.exe
+LINK : fatal error LNK1168: no se puede abrir ..\bin\gameDEBUG.exe para escritura

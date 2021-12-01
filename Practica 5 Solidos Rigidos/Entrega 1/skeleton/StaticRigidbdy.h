@@ -1,15 +1,8 @@
 #pragma once
 #include "RenderUtils.hpp"
-class StaticRigidbody
-{
-public:
-	StaticRigidbody(physx::PxRigidStatic* statics, RenderItem* body, float lifeTime);
-	~StaticRigidbody();
-	inline float getLifeTime() { return mLifeTime_; }
-	inline physx::PxRigidStatic* getStaticBody() { return mStatics_; }
-protected:
-	float mLifeTime_;
+class Staticbody{
+	float mLifetime_;
 	RenderItem* mBody_;
-	physx::PxRigidStatic* mStatics_;
+	physx::PxRigidStatic* mPhysics_;
 };
 

@@ -8,7 +8,10 @@ class Firework :
 public:
 
 	struct Payload {
-		Payload(unsigned type, unsigned count, Vector4 color);
+		Payload(unsigned type, unsigned count, Vector4 
+		
+		
+		);
 		void integrate(float t);
 		void explode();
 

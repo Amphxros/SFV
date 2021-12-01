@@ -10,9 +10,10 @@
 class BodySystem
 {
 public:
-	BodySystem(physx::PxPhysics* physics,float time);
+	BodySystem(physx::PxPhysics* physics, physx::PxScene* scene, float time);
 
-	void createStatic(Vector3 pos);
+	void createStaticBox(Vector3 pos,Vector4 color);
+	void createStaticSphere(Vector3 pos, Vector4 color);
 	void createDynamic(Vector3 pos, Vector3 speed);
 
 	void run(float t);
@@ -22,12 +23,8 @@ private:
 	float time_;
 	float timeToSpawn_;
 	physx::PxPhysics* mPhysics_;
-	std::vector<RigidBody*> mRigidBodys_;
-	std::vector<StaticRigidbody*> mStaticBodys_;
-
 	physx::PxScene* mScene_;
-	physx::PxMaterial* mMaterial_;
-	ContactReportCallback gContactReportCallback;
+	
 
 };
 

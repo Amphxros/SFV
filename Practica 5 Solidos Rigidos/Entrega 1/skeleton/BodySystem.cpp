@@ -1,42 +1,39 @@
 #include "BodySystem.h"
 #include <PxPhysicsAPI.h>
+#include <iostream>
+#include <cassert>
 
-BodySystem::BodySystem(physx::PxPhysics* physics, float time): 
-	mPhysics_(physics), timeToSpawn_(time)
+BodySystem::BodySystem(physx::PxPhysics* physics, physx::PxScene* scene, float time):
+	mPhysics_(physics), mScene_(scene),timeToSpawn_(time)
 {
 	time_ = 0;
 
-	// For Solid Rigids +++++++++++++++++++++++++++++++++++++
-	mMaterial_ = mPhysics_->createMaterial(0.5f, 0.5f, 0.6f);
+	createStaticBox(Vector3(0, -20, 0), Vector4(0, 0.7, 0.5, 1));
+}
 
-	physx::PxSceneDesc sceneDesc(mPhysics_->getTolerancesScale());
-	sceneDesc.gravity = physx::PxVec3(0.0f, -9.81f, 0.0f);
-	sceneDesc.cpuDispatcher = physx::PxDefaultCpuDispatcherCreate(2);
-	//sceneDesc.filterShader = contactReportFilterShader;
-	sceneDesc.simulationEventCallback = &gContactReportCallback;
-	mScene_ = mPhysics_->createScene(sceneDesc);
-	// ------------------------------------------------------
+void BodySystem::createStaticBox(Vector3 pos, Vector4 color)
+{
+	Staticbody* s = new Staticbody();
+
 
 }
 
-void BodySystem::createStatic(Vector3 pos)
+void BodySystem::createStaticSphere(Vector3 pos, Vector4 color)
 {
-	physx::PxTransform tr_ = physx::PxTransform(pos);
-	physx::PxRigidStatic* statics = mPhysics_->createRigidStatic(tr_);
-	RenderItem* mBody_ = new RenderItem(CreateShape(physx::PxSphereGeometry(4)), &tr_, Vector4());
-	StaticRigidbody* body = new StaticRigidbody(statics, mBody_, 0);
-
-	mScene_->addActor(*body->getStaticBody());
+	
 }
 
 void BodySystem::createDynamic(Vector3 pos, Vector3 speed)
 {
-	physx::PxTransform tr_ = physx::PxTransform(pos);
-	physx::PxRigidDynamic* dynamics = mPhysics_->createRigidDynamic(tr_);
-	RenderItem* mBody_ = new RenderItem(CreateShape(physx::PxSphereGeometry(4)), &tr_, Vector4());
-	RigidBody* body = new RigidBody(dynamics, mBody_, 0);
+	RigidBody* r = new RigidBody();
+	physx::PxTransform* tr_ = new physx::PxTransform(pos);
+	r->mPhysics_ = mPhysics_->createRigidDynamic(*tr_);
+	physx::PxGeometry* geo = new physx::PxSphereGeometry(3);
+	physx::PxShape* shape = CreateShape(*geo);
+	r->mPhysics_->attachShape(*shape);
+	r->mBody_ = new RenderItem(shape, r->mPhysics_, Vector4(0.1, 0.4, 0.4, 1));
 
-	mScene_->addActor(*body->getMyRigidBody());
-	body->getMyRigidBody()->addForce(speed * body->getMyRigidBody()->getMass());
 
+	mScene_->addActor(*r->mPhysics_);
+	r->mPhysics_->addForce(speed * r->mPhysics_->getMass());
 }
