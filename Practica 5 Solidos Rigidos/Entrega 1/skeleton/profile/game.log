@@ -3,8 +3,4 @@ U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\common\PhysX-3.4\PxShared\
            que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales
 U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount'
 U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\BodySystem.cpp(7,22): warning C5038: miembro de datos "BodySystem::mScene_" se inicializará después de miembro de datos "BodySystem::timeToSpawn_"
-U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\BodySystem.cpp(18,14): warning C4189: 'mBody_': la variable local se ha inicializado pero no se hace referencia a ella
-U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\BodySystem.cpp(17,24): warning C4189: 'statics': la variable local se ha inicializado pero no se hace referencia a ella
-U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\BodySystem.cpp(24,58): warning C4100: 'color': parámetro formal sin referencia
-U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\skeleton\BodySystem.cpp(24,45): warning C4100: 'pos': parámetro formal sin referencia
   game.vcxproj -> U:\UCM_Repos\SFV\Practica 5 Solidos Rigidos\Entrega 1\bin\gamePROFILE.exe

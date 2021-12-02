@@ -25,6 +25,7 @@ private:
 	physx::PxPhysics* mPhysics_;
 	physx::PxScene* mScene_;
 	
+	std::vector<RigidBody*> mRigidBodys_;
 
 };
 

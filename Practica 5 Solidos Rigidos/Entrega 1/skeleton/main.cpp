@@ -9,6 +9,7 @@
 #include "callbacks.hpp"
 #include "Particle.h"
 #include "Scene.h"
+#include <time.h>
 
 //#define OFFLINE_EXECUTION 
 
@@ -36,7 +37,7 @@ BodySystem* mSystem_;
 void initPhysics(bool interactive)
 {
 	PX_UNUSED(interactive);
-
+	srand(time(NULL));
 	gFoundation = PxCreateFoundation(PX_FOUNDATION_VERSION, gAllocator, gErrorCallback);
 
 	gPvd = PxCreatePvd(*gFoundation);
@@ -45,7 +46,7 @@ void initPhysics(bool interactive)
 
 	gPhysics = PxCreatePhysics(PX_PHYSICS_VERSION, *gFoundation, PxTolerancesScale(), true, gPvd);
 
-	gMaterial = gPhysics->createMaterial(0.5f, 0.5f, 0.6f);
+	gMaterial = gPhysics->createMaterial(0.5f, 1.2f, 0.6f);
 
 	// For Solid Rigids +++++++++++++++++++++++++++++++++++++
 	PxSceneDesc sceneDesc(gPhysics->getTolerancesScale());
@@ -71,6 +72,7 @@ void stepPhysics(bool interactive, double t)
 	
 	
 	//mScene->run(t);
+	mSystem_->run(t);
 	gScene->simulate(t);
 	gScene->fetchResults(interactive);
 	
@@ -103,11 +105,7 @@ void keyPress(unsigned char key, const PxTransform& camera)
 
 	switch(toupper(key))
 	{
-	case ' ':
 
-		mSystem_->createDynamic(Vector3(0, 200, 0), Vector3(0, 20, 0));
-		//mSystem_->createStaticBox(Vector3(0, 20, 0), Vector4(0, 1, 0,1));
-		break;
 	
 	default:
 		break;
