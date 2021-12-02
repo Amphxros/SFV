@@ -24,5 +24,7 @@ bool RigidBodySphereForce::rigidBodyInsideVolume(Vector3 pos)
 
 void RigidBodySphereForce::createVolume()
 {
-
+	physx::PxShape* shape = CreateShape(*mGeometry_);
+	mBody_ = new RenderItem(shape, &tr_, Vector4(0,0,0,0));
+	shape->release();
 }

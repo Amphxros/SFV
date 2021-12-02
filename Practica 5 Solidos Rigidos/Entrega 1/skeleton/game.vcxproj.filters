@@ -30,6 +30,7 @@
     <ClCompile Include="RigidbodyForceGenerator.cpp" />
     <ClCompile Include="RigidbodyForceRegistry.cpp" />
     <ClCompile Include="RigidBodySphereForce.cpp" />
+    <ClCompile Include="RigidBodyExplosion.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core.hpp" />
@@ -61,6 +62,7 @@
     <ClInclude Include="RigidbodyForceGenerator.h" />
     <ClInclude Include="RigidbodyForceRegistry.h" />
     <ClInclude Include="RigidBodySphereForce.h" />
+    <ClInclude Include="RigidBodyExplosion.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">
