@@ -7,8 +7,9 @@ BodySystem::BodySystem(physx::PxPhysics* physics, physx::PxScene* scene, float t
 	mPhysics_(physics), mScene_(scene),timeToSpawn_(time)
 {
 	time_ = 0;
-	
+	mRegistry_ = new RigidbodyForceRegistry();
 	createStaticBox(Vector3(0, -20, 0), Vector4(0, 0.7, 0.5, 1));
+	mExplosion_ = new RigidBodyExplosion(Vector3(0,10,0),10, 1);
 }
 
 void BodySystem::createStaticBox(Vector3 pos, Vector4 color)
@@ -36,11 +37,15 @@ void BodySystem::createStaticSphere(Vector3 pos, Vector4 color)
 
 }
 
-void BodySystem::createDynamic(Vector3 pos, Vector3 speed)
+RigidBody* BodySystem::createDynamic(Vector3 pos, Vector3 speed)
 {
 	RigidBody* r = new RigidBody();
 	
 	physx::PxTransform* tr_ = new physx::PxTransform(pos+ Vector3(rand()%10, rand() % 10, rand() % 10));
+	
+	r->mPosition_ = pos;
+	r->velocity = speed;
+	
 	r->mPhysics_ = mPhysics_->createRigidDynamic(*tr_);
 	physx::PxGeometry* geo = new physx::PxSphereGeometry(3);
 	physx::PxShape* shape = CreateShape(*geo);
@@ -49,36 +54,32 @@ void BodySystem::createDynamic(Vector3 pos, Vector3 speed)
 	r->mLifetime_ = 12;
 
 	mScene_->addActor(*r->mPhysics_);
-	r->mPhysics_->addForce(speed * r->mPhysics_->getMass());
+	r->mPhysics_->addForce(r->velocity * r->mPhysics_->getMass()); 
 
-	mRigidBodys_.push_back(r);
+	return r;
 }
 
 void BodySystem::run(float t)
 {
 	time_ += t;
 
+	mRegistry_->integrateForces(t);
 	if (time_ > timeToSpawn_) {
 		
 		time_ = 0;
-		createDynamic(Vector3(0, 0, 0), Vector3(10, 10, 10));
+		RigidBody* r= createDynamic(Vector3(0, 0, 0), Vector3(10, 10, 10));
 	
 	}
 
-	for (auto it = mRigidBodys_.begin(); it != mRigidBodys_.end() && !mRigidBodys_.empty();) {
-		RigidBody* r = *it;
+}
 
-		r->mLifetime_ -=t;
-		if (r->mLifetime_ <= 0) {
-			
-			r->mBody_->release();
-			delete r;
+void BodySystem::activateExplosion()
+{
+	for (int i = 0; i < 10; i++) {
+		RigidBody* r = createDynamic(Vector3(i, i, i), Vector3());
 
-			it =mRigidBodys_.erase(it);
-		}
-		else {
-			++it;
-		}
+		mRegistry_->add(r, mExplosion_);
 	}
 
+	mExplosion_->
 }

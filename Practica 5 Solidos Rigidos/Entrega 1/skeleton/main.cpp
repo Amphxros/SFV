@@ -105,7 +105,9 @@ void keyPress(unsigned char key, const PxTransform& camera)
 
 	switch(toupper(key))
 	{
-
+	case ' ': 
+		mSystem_->activateExplosion();
+		break;
 	
 	default:
 		break;

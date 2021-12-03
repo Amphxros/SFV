@@ -7,6 +7,11 @@
 #include "StaticRigidbdy.h"
 #include "Rigidbody.h"
 #include "callbacks.hpp"
+#include "RigidBodyExplosion.h"
+#include "RigidbodyForceRegistry.h"
+
+
+
 class BodySystem
 {
 public:
@@ -14,10 +19,10 @@ public:
 
 	void createStaticBox(Vector3 pos,Vector4 color);
 	void createStaticSphere(Vector3 pos, Vector4 color);
-	void createDynamic(Vector3 pos, Vector3 speed);
+	RigidBody* createDynamic(Vector3 pos, Vector3 speed);
 
 	void run(float t);
-
+	void activateExplosion();
 
 private:
 	float time_;
@@ -25,7 +30,10 @@ private:
 	physx::PxPhysics* mPhysics_;
 	physx::PxScene* mScene_;
 	
-	std::vector<RigidBody*> mRigidBodys_;
+	
+
+	RigidbodyForceRegistry* mRegistry_;
+	RigidBodyExplosion* mExplosion_;
 
 };
 
