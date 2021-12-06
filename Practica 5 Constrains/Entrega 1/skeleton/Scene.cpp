@@ -45,6 +45,8 @@ Scene::Scene(Vector3 p)
 
 Scene::~Scene()
 {
+	delete mParticleA;
+	delete mParticleB;
 	delete registry;
 
 	for (auto f : mForces_)

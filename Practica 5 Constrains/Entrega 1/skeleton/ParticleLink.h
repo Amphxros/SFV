@@ -26,7 +26,13 @@ public:
 	virtual unsigned addContact(ParticleContact* contact);
 protected:
 	float mMaxLength_;
-	float mRestitution_;
-
+	float mRestitution_=1;
 };
 
+class ParticleRod : public ParticleLink {
+public:
+	ParticleRod(Particle* particleA, Particle* particleB, float length);
+	virtual unsigned addContact(ParticleContact* contact);
+protected:
+	float mLength_;
+};
