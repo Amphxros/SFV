@@ -25,6 +25,7 @@
     <ClCompile Include="ParticleBungee.cpp" />
     <ClCompile Include="ParticleBuoyancy.cpp" />
     <ClCompile Include="ParticleContact.cpp" />
+    <ClCompile Include="ParticleLink.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core.hpp" />
@@ -51,6 +52,7 @@
     <ClInclude Include="ParticleBungee.h" />
     <ClInclude Include="ParticleBuoyancy.h" />
     <ClInclude Include="ParticleContact.h" />
+    <ClInclude Include="ParticleLink.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">

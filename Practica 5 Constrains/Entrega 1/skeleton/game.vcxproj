@@ -266,6 +266,7 @@
     <ClCompile Include="ParticleForceGenerator.cpp" />
     <ClCompile Include="ParticleForceRegistry.cpp" />
     <ClCompile Include="ParticleGravity.cpp" />
+    <ClCompile Include="ParticleLink.cpp" />
     <ClCompile Include="ParticleManager.cpp" />
     <ClCompile Include="ParticleSpring.cpp" />
     <ClCompile Include="RenderUtils.cpp" />
@@ -288,6 +289,7 @@
     <ClInclude Include="ParticleForceGenerator.h" />
     <ClInclude Include="ParticleForceRegistry.h" />
     <ClInclude Include="ParticleGravity.h" />
+    <ClInclude Include="ParticleLink.h" />
     <ClInclude Include="ParticleManager.h" />
     <ClInclude Include="ParticleSpring.h" />
     <ClInclude Include="RenderUtils.hpp" />

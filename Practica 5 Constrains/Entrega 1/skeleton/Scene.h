@@ -15,8 +15,8 @@
 #include "ParticleGravity.h"
 #include "ParticleForceRegistry.h"
 #include <list>
+#include "ParticleContact.h"
 using namespace physx;
-
 
 enum FORCES {EARTH_GRAVITY, LUNAR_GRAVITY, DRAGGING, WIND, EXPLOSION, BUOYANCY, BUNGEE,SPRING_A,NUM_FORCES};
 
@@ -43,5 +43,10 @@ private:
 	std::vector<ParticleForceGenerator*> mForces_;
 	ParticleSpring* muelle;
 	ParticleForceRegistry* registry;
+
+	Particle* mParticleA;
+	Particle* mParticleB;
+	ParticleContact* mContact_;
+
 };
 
