@@ -16,6 +16,7 @@
 #include "ParticleForceRegistry.h"
 #include <list>
 #include "ParticleContact.h"
+#include "ParticleLink.h"
 using namespace physx;
 
 enum FORCES {EARTH_GRAVITY, LUNAR_GRAVITY, DRAGGING, WIND, EXPLOSION, BUOYANCY, BUNGEE,SPRING_A,NUM_FORCES};
@@ -37,6 +38,8 @@ public:
 	void addK();
 	void sustrateK();
 
+	void setParticleSpeed(Vector3 v) { mParticleA->setSpeed(v); }
+
 private:	
 	ParticleManager* mManager_;
 	std::vector<Firework*> mFireWorks_;
@@ -47,6 +50,7 @@ private:
 	Particle* mParticleA;
 	Particle* mParticleB;
 	ParticleContact* mContact_;
+	ParticleCable* mCable_;
 
 };
 

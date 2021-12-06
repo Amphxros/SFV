@@ -17,25 +17,30 @@ Scene::Scene(Vector3 p)
 	mForces_.reserve(FORCES::NUM_FORCES);
 
 	//fuerzas
-	ParticleGravity* earth_gravity = new ParticleGravity(Vector3(0, -9.81, 0));		//100 veces menos ya que de lo contrario no se llega ni a percibir las particulas afectadas
-	ParticleGravity* lunar_gravity = new ParticleGravity(Vector3(0, -1.62, 0));		//100 veces menos ya que de lo contrario no se llega ni a percibir las particulas afectadas
+	//ParticleGravity* earth_gravity = new ParticleGravity(Vector3(0, -9.81, 0));		//100 veces menos ya que de lo contrario no se llega ni a percibir las particulas afectadas
+	//ParticleGravity* lunar_gravity = new ParticleGravity(Vector3(0, -1.62, 0));		//100 veces menos ya que de lo contrario no se llega ni a percibir las particulas afectadas
 	//ParticleDrag* drag = new ParticleDrag(0.5, 0.1);
 	//WindGenerator* w = new WindGenerator(Vector3(-0.05, 0, 0), Vector3(0, 0, 0), 10);
-	ExplosionForce* explosion = new ExplosionForce(Vector3(0, 0, 0), 1);
+	//ExplosionForce* explosion = new ExplosionForce(Vector3(0, 0, 0), 1);
 	//ParticleAnchoredSpring* anchor = new ParticleAnchoredSpring(Vector3(0, 20, 0), 0.1, 1);
-	ParticleBuoyancy* buoya = new ParticleBuoyancy(10,80,0.1);
+	//ParticleBuoyancy* buoya = new ParticleBuoyancy(10,80,0.1);
 
 
-	mForces_[(int)FORCES::EARTH_GRAVITY] = earth_gravity;
-	mForces_[(int)FORCES::LUNAR_GRAVITY] = lunar_gravity;
+	//mForces_[(int)FORCES::EARTH_GRAVITY] = earth_gravity;
+	//mForces_[(int)FORCES::LUNAR_GRAVITY] = lunar_gravity;
 	//mForces_[(int)FORCES::DRAGGING] = drag;
 	//mForces_[(int)FORCES::WIND] = w;
-	mForces_[(int)FORCES::EXPLOSION] = explosion;
+	//mForces_[(int)FORCES::EXPLOSION] = explosion;
 	//mForces_[(int)FORCES::SPRING_A] = anchor;
-	mForces_[(int)FORCES::BUOYANCY] = buoya;
+	//mForces_[(int)FORCES::BUOYANCY] = buoya;
 
-	addSpring();
+	//addSpring();
 	//
+
+	mParticleA = new Particle(Vector3(20, 0, 20), Vector3(0,0,0), Vector3(0,0,0), 0.79, 1, 3, Vector4(1, 0, 0, 1), 1);
+	mParticleB = new Particle(Vector3(0, 0, 20), Vector3(0,0,0), Vector3(0,0,0), 0.5, 2, 3, Vector4(0, 0, 1, 1), 1);
+	mCable_ = new ParticleCable(mParticleA, mParticleB, 30);
+	mContact_ = new ParticleContact(mParticleA, mParticleB);
 }
 
 Scene::~Scene()
@@ -51,7 +56,11 @@ Scene::~Scene()
 
 void Scene::run(double t)
 {
+	mParticleA->integrate(t);
+	mParticleB->integrate(t);
+	mCable_->addContact(mContact_);
 	registry->integrateForces(t);
+	mContact_->resolve(t);
 	
 	for (auto it = mFireWorks_.begin(); it != mFireWorks_.end(); ++it) {
 		Firework* f = *it;
