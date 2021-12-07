@@ -8,7 +8,7 @@ ParticleCable::ParticleCable(Particle* particleA, Particle* particleB, float max
 unsigned ParticleCable::addContact(ParticleContact* contact)
 {
 	float length = getCurrentLength();
-	if (length > mMaxLength_) {
+	if (length < mMaxLength_) {
 		return 0;
 	}
 	else {
@@ -31,11 +31,12 @@ unsigned ParticleRod::addContact(ParticleContact* contact)
 {
 	float length = getCurrentLength();
 	
-	if (mLength_ == length) {
+	if (mLength_ == length) { //si es la misma distancia no necesita correccion
 		return 0;
 	}
 	else {
 		contact = new ParticleContact(mParticleA_, mParticleB_);
+
 		if (length > mLength_) {
 			contact->setNormal((mParticleB_->getPosition() - mParticleA_->getPosition()).getNormalized());
 			contact->setPenetration(mLength_ - length);
