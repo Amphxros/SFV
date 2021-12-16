@@ -55,7 +55,7 @@ RigidBody* BodySystem::createDynamic(Vector3 pos, Vector3 speed)
 
 	mScene_->addActor(*r->mPhysics_);
 	r->mPhysics_->addForce(r->velocity * r->mPhysics_->getMass()); 
-
+	
 	return r;
 }
 
@@ -67,7 +67,8 @@ void BodySystem::run(float t)
 	if (time_ > timeToSpawn_) {
 		
 		time_ = 0;
-		RigidBody* r= createDynamic(Vector3(0, 0, 0), Vector3(10, 10, 10));
+		Vector3 ran= Vector3(rand() % 10, rand() % 10, rand() % 10);
+		RigidBody* r= createDynamic(ran, Vector3(10, 10, 10));
 	
 	}
 
@@ -81,5 +82,5 @@ void BodySystem::activateExplosion()
 		mRegistry_->add(r, mExplosion_);
 	}
 
-	mExplosion_->
+	mExplosion_->activateExplosion(Vector3(0,0,0));
 }

@@ -9,7 +9,7 @@ public:
 
     virtual void integrateForce(RigidBody* rb, float t) override;
 
-    void activateExplosion() { active_ = true; }
+    void activateExplosion(Vector3 center);
 protected:
     float mForceMod_;
     float mLifeTime_;

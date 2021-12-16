@@ -14,12 +14,25 @@ void RigidBodyExplosion::integrateForce(RigidBody* rb, float t)
 {
 	if (active_) {
 		if (rigidBodyInsideVolume(rb->mBody_->transform->p)) {
-			Vector3 delta = rb->mBody_->transform->p - mCenter_;
+			Vector3 dir = Vector3(mCenter_ - rb->mPhysics_->getGlobalPose().p);
+			float dst = dir.magnitude();
+			Vector3 accel = ((mRD_ - dst) * (-dir.getNormalized())) * mForceMod_;
 			
-			rb->addForceAtPoint(Vector3(), Vector3());
+			rb->mPhysics_->addForce(accel);
+		}
+		else {
+			active_ = false;
 		}
 	}
 	else {
 		mBody_->release();
 	}
 }
+
+void RigidBodyExplosion::activateExplosion(Vector3 center)
+{
+	active_ = true;
+	mCenter_ = center;
+	createVolume();
+}
+

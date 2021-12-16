@@ -1,1 +1,21 @@
-﻿
+﻿  BodySystem.cpp
+  RigidBodyExplosion.cpp
+U:\UCM_Repos\SFV\Practica 6 Solidos Rigidos\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
+           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen RigidBodyExplosion.cpp)
+U:\UCM_Repos\SFV\Practica 6 Solidos Rigidos\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen RigidBodyExplosion.cpp)
+U:\UCM_Repos\SFV\Practica 6 Solidos Rigidos\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(329,1): warning C5220: "physx::PxLightCpuTask::mRefCount": un miembro de datos no estático con un tipo calificado volátil ya no implica
+           que los constructores de copia/movimiento generados por el compilador y los operadores de asignación de copia o movimiento no sean triviales (compilando archivo de origen BodySystem.cpp)
+U:\UCM_Repos\SFV\Practica 6 Solidos Rigidos\Entrega 1\common\PhysX-3.4\PxShared\include\task\PxTask.h(326): message : vea la declaración de 'physx::PxLightCpuTask::mRefCount' (compilando archivo de origen BodySystem.cpp)
+U:\UCM_Repos\SFV\Practica 6 Solidos Rigidos\Entrega 1\skeleton\RigidbodyForceGenerator.h(11,1): warning C5204: "RigidbodyForceGenerator": la clase tiene funciones virtuales, pero su destructor trivial no es virtual; puede que las instancias de objetos derivados de esta clase no se destruyan correctamente (compilando archivo de origen RigidBodyExplosion.cpp)
+U:\UCM_Repos\SFV\Practica 6 Solidos Rigidos\Entrega 1\skeleton\RigidBodyExplosion.cpp(3,88): warning C4100: 'lifeTime': parámetro formal sin referencia
+U:\UCM_Repos\SFV\Practica 6 Solidos Rigidos\Entrega 1\skeleton\RigidBodyExplosion.cpp(13,62): warning C4100: 't': parámetro formal sin referencia
+U:\UCM_Repos\SFV\Practica 6 Solidos Rigidos\Entrega 1\common\PhysX-3.4\PxShared\include\foundation\PxVec3.h(293): warning C5045: El compilador insertará la mitigación de Spectre para la carga de memoria si se especificó el modificador /Qspectre
+  U:\UCM_Repos\SFV\Practica 6 Solidos Rigidos\Entrega 1\common\PhysX-3.4\PxShared\include\foundation\PxVec3.h(293) : nota: el intervalo "m" del índice se comprobó por comparación en esta línea
+  U:\UCM_Repos\SFV\Practica 6 Solidos Rigidos\Entrega 1\common\PhysX-3.4\PxShared\include\foundation\PxVec3.h(293) : nota: suministra la llamada en esta línea
+U:\UCM_Repos\SFV\Practica 6 Solidos Rigidos\Entrega 1\skeleton\RigidbodyForceGenerator.h(11,1): warning C5204: "RigidbodyForceGenerator": la clase tiene funciones virtuales, pero su destructor trivial no es virtual; puede que las instancias de objetos derivados de esta clase no se destruyan correctamente (compilando archivo de origen BodySystem.cpp)
+U:\UCM_Repos\SFV\Practica 6 Solidos Rigidos\Entrega 1\skeleton\BodySystem.cpp(7,22): warning C5038: miembro de datos "BodySystem::mScene_" se inicializará después de miembro de datos "BodySystem::timeToSpawn_"
+U:\UCM_Repos\SFV\Practica 6 Solidos Rigidos\Entrega 1\skeleton\BodySystem.cpp(71,14): warning C4189: 'r': la variable local se ha inicializado pero no se hace referencia a ella
+U:\UCM_Repos\SFV\Practica 6 Solidos Rigidos\Entrega 1\skeleton\BodySystem.cpp(82): warning C5045: El compilador insertará la mitigación de Spectre para la carga de memoria si se especificó el modificador /Qspectre
+  U:\UCM_Repos\SFV\Practica 6 Solidos Rigidos\Entrega 1\skeleton\BodySystem.cpp(79) : nota: el intervalo "i" del índice se comprobó por comparación en esta línea
+  U:\UCM_Repos\SFV\Practica 6 Solidos Rigidos\Entrega 1\skeleton\BodySystem.cpp(82) : nota: suministra la llamada en esta línea
+  game.vcxproj -> U:\UCM_Repos\SFV\Practica 6 Solidos Rigidos\Entrega 1\bin\gameDEBUG.exe
