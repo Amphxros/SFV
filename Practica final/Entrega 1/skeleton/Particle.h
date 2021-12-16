@@ -38,8 +38,8 @@ public:
 
 	inline bool hasInfiniteMass() { return (1 / mMass_) <= 0; }
 
-	inline void setBoxBody() { mBody_ = new RenderItem(CreateShape(physx::PxBoxGeometry(mRadius_, mRadius_, mRadius_)), mTransform_, mColor_); }
-	inline void setBoxBody(float x, float y, float z) { mBody_ = new RenderItem(CreateShape(physx::PxBoxGeometry(x,y,z)), mTransform_, mColor_);}
+	inline void setBoxBody() { delete mBody_; mBody_ = new RenderItem(CreateShape(physx::PxBoxGeometry(mRadius_, mRadius_, mRadius_)), mTransform_, mColor_); }
+	inline void setBoxBody(float x, float y, float z) { delete mBody_; mBody_ = new RenderItem(CreateShape(physx::PxBoxGeometry(x, y, z)), mTransform_, mColor_); }
 
 	void setSphereBody() { mBody_= new RenderItem(CreateShape(physx::PxSphereGeometry(mRadius_)), mTransform_, mColor_); }
 

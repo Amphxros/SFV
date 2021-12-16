@@ -65,15 +65,13 @@ void Scene::createForces()
 
 void Scene::createLevel()
 {
-	for (int i = 0; i < 10; i++) {
-		ExplosionForce* e = new ExplosionForce(Vector3(20 * i,0,0), 3);
-		mForces_->addForce(ForceType::EXPLOSION, e);
-	}
-	
-	for (int i = 0; i < 10; i++) {
-		Particle* p = new Particle(Vector3(10 * i, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), 0.5, 3, 3, Vector4(), 0);
-		registry->add(p, mForces_->getForce(ForceType::GRAVITY));
-	
+	Particle* back = new Particle(Vector3(100, 0, -10), Vector3(), Vector3(), 0, 0, 0, Vector4(0.03, 0.44, 0.59, 1), 0);
+	back->setBoxBody(200,100,1);
+	for (int i = 0; i < 5; i++) {
+		for (int j = 0; j < 5; j++) {
+			ExplosionForce* e = new ExplosionForce(Vector3(20 * i - (10*(j % 2)), 10 * j, 0), 3);
+			mForces_->addForce(ForceType::EXPLOSION, e);
+		}
 	}
 }
 
