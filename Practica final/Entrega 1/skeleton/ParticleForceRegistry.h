@@ -2,6 +2,7 @@
 #include "Particle.h"
 #include "ParticleForceGenerator.h"
 #include <vector>
+#include "ParticleBuoyancy.h"
 
 struct ParticleForcePair {		// equivalente a std::pair<particle, force>
 	Particle* particle;
@@ -19,8 +20,9 @@ public:
 	void remove(Particle* particle, ParticleForceGenerator* force);
 	void remove(ParticleForcePair registry);
 	void clear();
-	void integrateForces(float t);
+	bool integrateForces(float t);
 protected:
 	Registry mRegistry_;
+	ParticleBuoyancy* buoya;
 };
 

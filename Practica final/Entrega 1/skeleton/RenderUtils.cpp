@@ -137,9 +137,9 @@ void exitCallback(void)
 void renderLoop()
 {
 	StartCounter();
-	sCamera = new Camera(PxVec3(50.0f, 50.0f, 50.0f), PxVec3(-0.6f,-0.2f,-0.7f));
+	sCamera = new Camera(PxVec3(40.0f, 10.0f, 100.0f), PxVec3(0,0,-0.7f));
 
-	setupDefaultWindow("Practica 4: muelles");
+	setupDefaultWindow("Pachinko");
 	setupDefaultRenderState();
 
 	glutIdleFunc(idleCallback);

@@ -261,7 +261,7 @@ void setupDefaultWindow(const char *name)
 void setupDefaultRenderState()
 {
 	// Setup default render states
-	glClearColor(0.3f, 0.4f, 0.5f, 1.0);
+	glClearColor(0.01, 0.07, 0.1, 1);
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_COLOR_MATERIAL);
 	//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -302,6 +302,7 @@ void startRender(const PxVec3& cameraEye, const PxVec3& cameraDir, PxReal clipNe
 
 void renderShape(const PxShape& shape, const PxTransform& transform, const PxVec4& color)
 {
+	
 	PxGeometryHolder h = shape.getGeometry();
 
 	if (shape.getFlags() & PxShapeFlag::eTRIGGER_SHAPE)

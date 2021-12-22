@@ -10,23 +10,69 @@
     <ClCompile Include="RenderUtils.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="callbacks.cpp" />
-    <ClCompile Include="Particle.cpp" />
     <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="ParticleManager.cpp" />
-    <ClCompile Include="Firework.cpp" />
-    <ClCompile Include="ParticleGravity.cpp" />
-    <ClCompile Include="ParticleForceRegistry.cpp" />
-    <ClCompile Include="ParticleForceGenerator.cpp" />
-    <ClCompile Include="WindGenerator.cpp" />
-    <ClCompile Include="ParticleDrag.cpp" />
-    <ClCompile Include="ExplosionForce.cpp" />
-    <ClCompile Include="ParticleSpring.cpp" />
-    <ClCompile Include="ParticleAnchoredSpring.cpp" />
-    <ClCompile Include="ParticleBungee.cpp" />
-    <ClCompile Include="ParticleBuoyancy.cpp" />
-    <ClCompile Include="ParticleContact.cpp" />
-    <ClCompile Include="ParticleLink.cpp" />
     <ClCompile Include="ForceRegister.cpp" />
+    <ClCompile Include="ExplosionForce.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Firework.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleAnchoredSpring.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleBungee.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleBuoyancy.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleContact.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleDrag.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleForceGenerator.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleForceRegistry.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleGravity.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleLink.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleManager.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSpring.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="InverseExplosionForce.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidBody.cpp">
+      <Filter>RigidBody</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidBodyForceGenerator.cpp">
+      <Filter>RigidBody</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidBodyForceRegistry.cpp">
+      <Filter>RigidBody</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidBodyExplosion.cpp">
+      <Filter>RigidBody</Filter>
+    </ClCompile>
+    <ClCompile Include="WindGenerator.cpp">
+      <Filter>Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="FireWorkSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core.hpp" />
@@ -38,27 +84,79 @@
     </ClInclude>
     <ClInclude Include="RenderUtils.hpp" />
     <ClInclude Include="callbacks.hpp" />
-    <ClInclude Include="Particle.h" />
     <ClInclude Include="Scene.h" />
-    <ClInclude Include="ParticleManager.h" />
-    <ClInclude Include="Firework.h" />
-    <ClInclude Include="ParticleForceGenerator.h" />
-    <ClInclude Include="ParticleGravity.h" />
-    <ClInclude Include="ParticleForceRegistry.h" />
-    <ClInclude Include="WindGenerator.h" />
-    <ClInclude Include="ParticleDrag.h" />
-    <ClInclude Include="ExplosionForce.h" />
-    <ClInclude Include="ParticleSpring.h" />
-    <ClInclude Include="ParticleAnchoredSpring.h" />
-    <ClInclude Include="ParticleBungee.h" />
-    <ClInclude Include="ParticleBuoyancy.h" />
-    <ClInclude Include="ParticleContact.h" />
-    <ClInclude Include="ParticleLink.h" />
     <ClInclude Include="ForceRegister.h" />
+    <ClInclude Include="ExplosionForce.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="Firework.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleAnchoredSpring.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleBungee.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleBuoyancy.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleContact.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleDrag.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleForceGenerator.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleForceRegistry.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleGravity.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleLink.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleManager.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSpring.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="InverseExplosionForce.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="RigidBody.h">
+      <Filter>RigidBody</Filter>
+    </ClInclude>
+    <ClInclude Include="RigidBodyForceGenerator.h">
+      <Filter>RigidBody</Filter>
+    </ClInclude>
+    <ClInclude Include="RigidBodyForceRegistry.h">
+      <Filter>RigidBody</Filter>
+    </ClInclude>
+    <ClInclude Include="RigidBodyExplosion.h">
+      <Filter>RigidBody</Filter>
+    </ClInclude>
+    <ClInclude Include="WindGenerator.h">
+      <Filter>Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="FireWorkSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Render">
       <UniqueIdentifier>{d04b4f9f-5a69-465e-8070-25c6d0bcd3c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Particle">
+      <UniqueIdentifier>{9b081fc1-9cf5-47a8-8313-bb4e5495d3d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RigidBody">
+      <UniqueIdentifier>{28bfd6a4-6b7c-4992-950d-3fa0099b9c46}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

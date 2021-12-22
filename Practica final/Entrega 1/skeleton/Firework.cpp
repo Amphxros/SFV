@@ -15,7 +15,7 @@ void Firework::Payload::integrate(float t)
 			//creamos particulas
 			if (payloadType_ == Type::SPHERE && payloadCount_!=0) {
 				for (int i = 0; i<payloadCount_; i++) {
-					Particle* f = new Particle(p->getPosition(), Vector3(), Vector3(0, -9.81, 0), 0.3, 0.001, 0.5, p->getColor(), 1);
+					Particle* f = new Particle(p->getPosition(), Vector3(), Vector3(0, -9.81, 0), 0.3,0.01, 0.1, p->getColor(), 1);
 					f->setSpeed(Vector3(cos(rand() % 360) * 10, 10, sin(rand() % 360) * 10));
 					mParticles_.push_back(f);
 				}
@@ -47,16 +47,19 @@ void Firework::Payload::explode()
 		
 	case Type::SPHERE:
 		for (int i = 0; i < payloadCount_; i++) {
-			Particle* p = new Particle(Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), 0.9, 0.001, 11, color, 3);
-			p->setSpeed(Vector3(cos(rand() % 360) * 10, 10* sin(i*360/payloadCount_), sin(rand() % 360) * 10));
-			p->setAcceleration(Vector3(0, -9.8, 0));
-			mParticles_.push_back(p);
+			
+			Particle* p = new Particle(Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), 0.9, 0.001,1, color, 3);
+			if (p != nullptr) {
+				p->setSpeed(Vector3(cos(rand() % 360) * 10, 10 * sin(i * 360 / payloadCount_), sin(rand() % 360) * 10));
+				p->setAcceleration(Vector3(0, -9.8, 0));
+				mParticles_.push_back(p);
+			}
 		}
 		break;
 		
 	case Type::ASPERSOR:
 		for (int i = 0; i < payloadCount_; i++) {
-			Particle* p = new Particle(Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), 0.9, 0.001, 11, color, 3);
+			Particle* p = new Particle(Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), 0.9, 0.001, 1, color, 3);
 			p->setSpeed(Vector3(cos(rand() % 360) * 360, 0, sin(rand() % 360) * 360));
 			p->setAcceleration(Vector3(0, -9.8, 0));
 			mParticles_.push_back(p);

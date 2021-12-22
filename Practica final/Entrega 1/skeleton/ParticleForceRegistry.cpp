@@ -1,12 +1,14 @@
 #include "ParticleForceRegistry.h"
+#include "InverseExplosionForce.h"
 
 ParticleForceRegistry::ParticleForceRegistry() {
-
+	buoya= new ParticleBuoyancy(100, -30, 1000);
 }
 
 ParticleForceRegistry::~ParticleForceRegistry()
 {
 	clear();
+	//delete buoya;
 }
 
 void ParticleForceRegistry::add(Particle* particle, ParticleForceGenerator* force)
@@ -43,10 +45,12 @@ void ParticleForceRegistry::remove(ParticleForcePair registry)
 	if (i < mRegistry_.size()) {
 
 		auto* p = (mRegistry_.begin() + i)->particle;
-		auto* f = (mRegistry_.begin() + i)->force;
+		
+		//auto* f = (mRegistry_.begin() + i)->force;
 		mRegistry_.erase(mRegistry_.begin() + i);
-		(mRegistry_.begin() + i)->particle = nullptr;
-		delete p;
+		p->deleteBody();
+		
+		//(mRegistry_.begin() + i)->particle = nullptr;
 		//delete f;
 	}
 }
@@ -61,16 +65,24 @@ void ParticleForceRegistry::clear()
 	}
 }
 
-void ParticleForceRegistry::integrateForces(float t)
+bool ParticleForceRegistry::integrateForces(float t)
 {
+	bool abs = false;
 	for (auto it = mRegistry_.begin(); it != mRegistry_.end() && !mRegistry_.empty();) {
 
-
 		it->force->integrateForce(it->particle, t);
+	
+		if (it->particle->getPosition().y < -20 && !it->particle->hasBuoyance()) {
+			add(it->particle, buoya);
+			it->particle->setBuoyancy();
+		}
+
 
 		if (it->particle->isTimeOver(t)) {
-			remove(it->particle, it->force);
-
+			if (it->particle->getPosition().y > -30) {
+				abs = true;
+			}
+			remove(*it);
 			it = mRegistry_.begin();
 
 		}
@@ -78,6 +90,9 @@ void ParticleForceRegistry::integrateForces(float t)
 			++it;
 		}
 
+
 		
 	}
+
+	return abs;
 }

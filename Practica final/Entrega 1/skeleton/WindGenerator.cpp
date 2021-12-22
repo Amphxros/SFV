@@ -3,7 +3,7 @@
 WindGenerator::WindGenerator(Vector3 force, Vector3 pos, float rd):
 	ParticleForceGenerator(force), rd_(rd)
 {
-	//mParticleWind = new Particle(pos, Vector3(0, 0, 0), Vector3(0, 0, 0), 0, 0, rd, Vector4(0, 1, 0.5, 0.3), 0);
+	mParticleWind = new Particle(pos, Vector3(0, 0, 0), Vector3(0, 0, 0), 0, 0, rd, Vector4(0, 1, 0.5, 0), 0);
 }
 
 void WindGenerator::integrateForce(Particle* p, float t) 

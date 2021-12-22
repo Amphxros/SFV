@@ -43,6 +43,10 @@ public:
 
 	void setSphereBody() { mBody_= new RenderItem(CreateShape(physx::PxSphereGeometry(mRadius_)), mTransform_, mColor_); }
 
+	void deleteBody() { mBody_->release(); }
+
+	bool hasBuoyance() { return hasbuoyancy; }
+	void setBuoyancy() { hasbuoyancy = true; }
 protected:
 	//components for the physics of the particle
 
@@ -60,6 +64,7 @@ protected:
 	double time_;
 	double age_;
 
+	bool hasbuoyancy = false;
 	std::list<Particle*>::iterator mIt_;
 	
 	//components fo rendering the particle

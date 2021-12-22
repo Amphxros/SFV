@@ -2,7 +2,7 @@
 
 ExplosionForce::ExplosionForce(Vector3 pos, float rd): ParticleForceGenerator(),mPos_(pos),rd_(rd)
 {
-	particleExplosionArea = new Particle(mPos_, Vector3(0, 0, 0), Vector3(0, 0, 0), 0, 0, rd_, Vector4(1, 0.5, 0, 0.2), 0); 
+	particleExplosionArea = new Particle(mPos_, Vector3(0, 0, 0), Vector3(0, 0, 0), 0, 0, rd_/2, Vector4(1, 0.5, 0, 1), 0); 
 }
 
 ExplosionForce::~ExplosionForce()
@@ -26,7 +26,6 @@ bool ExplosionForce::isParticleOnMyZone(Particle* p)
 	return distance(p->getPosition(), particleExplosionArea->getPosition()) < rd_;
 }
 
-/// EXPLICACION: la distancia en un plano entre un punto A y B es el modulo (linea recta)-> modulo= raiz(x^2+ y^2 + z^2)
 float ExplosionForce::distance(Vector3 posA, Vector3 posB)
 {
 	float x = (posA.x - posB.x) * (posA.x - posB.x);

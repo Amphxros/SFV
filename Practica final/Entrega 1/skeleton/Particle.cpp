@@ -1,8 +1,5 @@
 #include "Particle.h"
 
-
-
-
 Particle::Particle(Vector3 pos, Vector3 speed, Vector3 accel, float damp, float mass, float rd, Vector4 col,double limit):
 	mPos_(pos), mSpeed_(speed), mAccel_(accel),mDamp_(damp),mForce_(Vector3(0,0,0)), mMass_(mass), mRadius_(rd), mColor_(col), age_(limit)
 {
@@ -13,9 +10,9 @@ Particle::Particle(Vector3 pos, Vector3 speed, Vector3 accel, float damp, float 
 
 Particle::~Particle()
 {
-	DeregisterRenderItem(mBody_);
-	delete mBody_;
-	delete mTransform_;
+	//DeregisterRenderItem(mBody_);
+	mBody_->release();
+	//delete mTransform_;
 	
 }
 

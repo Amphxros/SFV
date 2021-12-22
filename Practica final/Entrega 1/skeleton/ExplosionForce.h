@@ -11,6 +11,7 @@ public:
 
     bool isParticleOnMyZone(Particle* p);
     float distance(Vector3 posA, Vector3 posB);
+    Particle* getAssociatedParticle() { return particleExplosionArea; }
 
 protected:
     Particle* particleExplosionArea;    // zona/areade la explosion
